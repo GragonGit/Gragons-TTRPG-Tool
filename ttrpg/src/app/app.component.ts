@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { invoke } from '@tauri-apps/api';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,5 @@ import { invoke } from '@tauri-apps/api';
   styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-  
+
 }
