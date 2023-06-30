@@ -4,7 +4,7 @@
     "beforeBuildCommand": "ng build ttrpg",
     "beforeDevCommand": "ng serve",
     "devPath": "http://localhost:4200",
-    "distDir": ""
+    "distDir": "../dist/ttrpg"
   },
   "package": {
     "productName": "Gragons TTRPG Tool",
@@ -29,7 +29,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "de.gragon.ttrpgtool",
       "longDescription": "",
       "macOS": {
         "entitlements": null,
