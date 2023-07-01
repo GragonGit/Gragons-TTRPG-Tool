@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { StartscreenComponent } from './components/startscreen/startscreen.component';
+import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
 
 const routes: Routes = [
 	{ path: 'start', component: StartscreenComponent },
 	{ path: '', redirectTo: '/start', pathMatch: 'full' },
-	{ path: '**', component: StartscreenComponent}
+	{ path: '**', component: StartscreenComponent }
 ];
 
 @NgModule({

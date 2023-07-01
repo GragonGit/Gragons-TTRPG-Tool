@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'dexie';
 import { Character } from 'src/app/models/Character';
-import { DatabaseService } from "../../services/database.service";
+import { DatabaseService } from "../../../services/database.service";
 
 @Component({
 	selector: 'app-startscreen',
@@ -19,7 +19,7 @@ export class StartscreenComponent {
 	}
 
 	createNewCharacterHandler() {
-		
+
 	}
 
 	constructor(

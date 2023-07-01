@@ -12,15 +12,17 @@ import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
 
-import { StartscreenComponent } from './components/startscreen/startscreen.component';
-import { DrawerComponent } from './components/drawer/drawer.component';
+import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
+import { DrawerComponent } from './components/main/drawer/drawer.component';
+import { ProfileComponent } from './components/main/profile/profile.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
 		StartscreenComponent,
-		DrawerComponent
+		DrawerComponent,
+		ProfileComponent
 	],
 	imports: [
 		BrowserModule,
