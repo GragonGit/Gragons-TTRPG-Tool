@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'dexie';
 import { Character } from 'src/app/models/Character';
 import { DatabaseService } from "../../../services/database.service";
 
@@ -8,10 +9,9 @@ import { DatabaseService } from "../../../services/database.service";
 	styleUrls: ['./no-character-selected.component.sass']
 })
 export class NoCharacterSelectedComponent {
-	characters: Character[] = []
+	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb()
 
 	ngOnInit() {
-		this.setCharacters()
 	}
 
 	openCharacterHandler() {
@@ -19,10 +19,6 @@ export class NoCharacterSelectedComponent {
 	}
 
 	createNewCharacterHandler() {
-	}
-
-	setCharacters() {
-		return this.databaseService.getAllCharactersFromDb().then((characters) => this.characters = characters)
 	}
 
 	constructor(
