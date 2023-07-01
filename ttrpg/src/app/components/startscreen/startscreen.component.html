@@ -1,15 +1,13 @@
-<div>
-	<h1>Wilkommen zu Gragon's TTRPG Tool</h1>
-	<mat-action-list>
-		<div mat-subheader class="center-vertically">
-			Deine Charaktere
-			<button mat-icon-button color="primary" (click)="createNewCharacterHandler()">
-				<mat-icon fontIcon="add"></mat-icon>
-			</button>
-		</div>
-		<mat-list-item *ngFor="let character of characters | async">
-			<mat-divider></mat-divider>
-			{{character.name}}
-		</mat-list-item>
-	</mat-action-list>
-</div>
+<h1>Wilkommen zu Gragon's TTRPG Tool</h1>
+<mat-action-list>
+	<div mat-subheader class="center-vertically">
+		Deine Charaktere
+		<button mat-icon-button color="primary" (click)="createNewCharacterHandler()">
+			<mat-icon fontIcon="add"></mat-icon>
+		</button>
+	</div>
+	<mat-list-item *ngFor="let character of characters | async">
+		<mat-divider></mat-divider>
+		{{character.name}}
+	</mat-list-item>
+</mat-action-list>
