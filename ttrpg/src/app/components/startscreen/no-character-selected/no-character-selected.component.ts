@@ -7,11 +7,13 @@ import { Component } from '@angular/core';
 })
 export class NoCharacterSelectedComponent {
 
+	ngOnInit() {
+	}
+
 	openCharacterHandler() {
-		
+
 	}
 
 	createNewCharacterHandler() {
-
 	}
 }
