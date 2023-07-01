@@ -12,6 +12,10 @@ export class DatabaseService {
 		return liveQuery(() => db.characters.toArray())
 	}
 
+	getCharacterFromDbById(id: number) {
+		return liveQuery(() => db.characters.get(id))
+	}
+
 	addCharacterToDb(character: Character) {
 		db.characters.add(character)
 	}

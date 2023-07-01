@@ -14,14 +14,6 @@ export class StartscreenComponent {
 	ngOnInit() {
 	}
 
-	openCharacterHandler() {
-
-	}
-
-	createNewCharacterHandler() {
-
-	}
-
 	constructor(
 		private databaseService: DatabaseService
 	) { }

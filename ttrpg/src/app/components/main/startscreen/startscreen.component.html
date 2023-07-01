@@ -2,12 +2,11 @@
 <mat-action-list>
 	<div mat-subheader class="center-vertically">
 		Deine Charaktere
-		<button mat-icon-button color="primary" (click)="createNewCharacterHandler()">
+		<button mat-icon-button color="primary" routerLink="../profile/0">
 			<mat-icon fontIcon="add"></mat-icon>
 		</button>
 	</div>
-	<mat-list-item *ngFor="let character of characters | async">
-		<mat-divider></mat-divider>
+	<button mat-list-item routerLink="{{'../profile/' + character.id}}" *ngFor="let character of characters | async">
 		{{character.name}}
-	</mat-list-item>
+	</button>
 </mat-action-list>
