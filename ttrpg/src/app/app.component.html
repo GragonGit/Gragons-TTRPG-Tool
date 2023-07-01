@@ -1,0 +1,9 @@
+<mat-sidenav-container>
+	<mat-sidenav mode="side">
+		<!--TODO Navbar component-->
+	</mat-sidenav>
+	<mat-sidenav-content>
+		<app-no-character-selected *ngIf="!characterSelected"></app-no-character-selected>
+		<router-outlet *ngIf="characterSelected"></router-outlet>
+	</mat-sidenav-content>
+</mat-sidenav-container>
