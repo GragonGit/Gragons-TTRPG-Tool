@@ -22,7 +22,7 @@ export class NoCharacterSelectedComponent {
 	}
 
 	setCharacters() {
-		return this.databaseService.getAllCharactersFromDb()//.then((characters) => this.characters = characters)
+		return this.databaseService.getAllCharactersFromDb().then((characters) => this.characters = characters)
 	}
 
 	constructor(
