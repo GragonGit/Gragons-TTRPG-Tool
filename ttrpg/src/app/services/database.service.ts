@@ -7,6 +7,10 @@ import { Character } from '../models/Character';
 })
 export class DatabaseService {
 
+	async getAllCharactersFromDb(): Promise<Character[]> {
+		return await db.characters.toArray()
+	}
+
 	addCharacterToDb(character: Character) {
 		db.characters.add(character)
 	}

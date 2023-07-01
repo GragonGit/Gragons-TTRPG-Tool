@@ -7,7 +7,7 @@
 				<mat-icon fontIcon="add"></mat-icon>
 			</button>
 		</div>
-		<mat-list-item *ngFor="let character of characters">
+		<mat-list-item *ngFor="let character of setCharacters() | async">
 			<mat-divider></mat-divider>
 			{{character.name}}
 		</mat-list-item>
