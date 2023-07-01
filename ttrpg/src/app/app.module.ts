@@ -9,6 +9,10 @@ import { NoCharacterSelectedComponent } from './components/startscreen/no-charac
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from '@angular/material/card';
 import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule } from '@angular/material/list';
+import { MatDividerModule } from "@angular/material/divider";
+import { MatIconModule } from "@angular/material/icon";
+
 
 @NgModule({
 	declarations: [
@@ -23,7 +27,10 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 
 		MatButtonModule,
 		MatCardModule,
-		MatSidenavModule
+		MatSidenavModule,
+		MatListModule,
+		MatDividerModule,
+		MatIconModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

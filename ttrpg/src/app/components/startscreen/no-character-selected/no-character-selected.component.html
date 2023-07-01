@@ -1,7 +1,15 @@
 <div>
 	<h1>Wilkommen zu Gragon's TTRPG Tool</h1>
-	<span class="center-spread">
-		<button mat-flat-button color="primary" (click)="openCharacterHandler()">Charakter öffnen</button>
-		<button mat-flat-button color="primary" (click)="createNewCharacterHandler()">Neuen Charakter erstellen</button>
-	</span>
+	<mat-action-list>
+		<div mat-subheader class="center-vertically">
+			Deine Charaktere
+			<button mat-icon-button color="primary" (click)="createNewCharacterHandler()">
+				<mat-icon fontIcon="add"></mat-icon>
+			</button>
+		</div>
+		<mat-list-item *ngFor="let character of characters">
+			<mat-divider></mat-divider>
+			{{character.name}}
+		</mat-list-item>
+	</mat-action-list>
 </div>

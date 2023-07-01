@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Character } from 'src/app/models/Character';
 
 @Component({
 	selector: 'app-no-character-selected',
@@ -6,8 +7,10 @@ import { Component } from '@angular/core';
 	styleUrls: ['./no-character-selected.component.sass']
 })
 export class NoCharacterSelectedComponent {
+	characters: Character[] = []
 
 	ngOnInit() {
+		
 	}
 
 	openCharacterHandler() {

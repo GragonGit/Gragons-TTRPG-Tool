@@ -1,10 +1,10 @@
 import Dexie, { Table } from 'dexie';
-import * as table from "./tables";
-import * as data from "./data"
+import { Character } from "../models/Character";
+import { Characters } from "../resources/Characters"
 
 export class AppDB extends Dexie {
-	characters!: Table<table.Character, number>;
-	
+	characters!: Table<Character, number>;
+
 	constructor() {
 		super('ngdexieliveQuery');
 		this.version(3).stores({
@@ -12,9 +12,9 @@ export class AppDB extends Dexie {
 		});
 		this.on('populate', () => this.populate());
 	}
-	
+
 	async populate() {
-		await db.characters.bulkAdd(data.characters);
+		await db.characters.bulkAdd(Characters);
 	}
 }
 
