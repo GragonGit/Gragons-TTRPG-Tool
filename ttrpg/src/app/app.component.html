@@ -3,7 +3,7 @@
 		<!--TODO Navbar component-->
 	</mat-sidenav>
 	<mat-sidenav-content>
-		<app-no-character-selected *ngIf="!characterSelected"></app-no-character-selected>
+		<app-startscreen *ngIf="!characterSelected"></app-startscreen>
 		<router-outlet *ngIf="characterSelected"></router-outlet>
 	</mat-sidenav-content>
 </mat-sidenav-container>

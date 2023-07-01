@@ -4,7 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoCharacterSelectedComponent } from './components/startscreen/no-character-selected/no-character-selected.component';
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from '@angular/material/card';
@@ -12,12 +11,13 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from "@angular/material/divider";
 import { MatIconModule } from "@angular/material/icon";
+import { StartscreenComponent } from './components/startscreen/startscreen.component';
 
 
 @NgModule({
 	declarations: [
 		AppComponent,
-		NoCharacterSelectedComponent
+		StartscreenComponent
 	],
 	imports: [
 		BrowserModule,

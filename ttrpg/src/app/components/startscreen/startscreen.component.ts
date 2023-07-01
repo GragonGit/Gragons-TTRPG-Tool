@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { Observable } from 'dexie';
 import { Character } from 'src/app/models/Character';
-import { DatabaseService } from "../../../services/database.service";
+import { DatabaseService } from "../../services/database.service";
 
 @Component({
-	selector: 'app-no-character-selected',
-	templateUrl: './no-character-selected.component.html',
-	styleUrls: ['./no-character-selected.component.sass']
+	selector: 'app-startscreen',
+	templateUrl: './startscreen.component.html',
+	styleUrls: ['./startscreen.component.sass']
 })
-export class NoCharacterSelectedComponent {
+export class StartscreenComponent {
 	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb()
 
 	ngOnInit() {
@@ -23,5 +23,5 @@ export class NoCharacterSelectedComponent {
 
 	constructor(
 		private databaseService: DatabaseService
-	) {}
+	) { }
 }
