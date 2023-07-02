@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { liveQuery } from 'dexie';
 import { db } from "../database/db";
 import { Character } from '../models/Character';
-import { liveQuery } from 'dexie';
 
 @Injectable({
 	providedIn: 'root'

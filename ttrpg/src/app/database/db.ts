@@ -1,6 +1,6 @@
 import Dexie, { Table } from 'dexie';
 import { Character } from "../models/Character";
-import { Characters } from "../resources/Characters"
+import { Characters } from "../resources/Characters";
 
 export class AppDB extends Dexie {
 	characters!: Table<Character, number>;

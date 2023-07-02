@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'dexie';
+
 import { Character } from 'src/app/models/Character';
 import { DatabaseService } from 'src/app/services/database.service';
 
@@ -10,27 +10,23 @@ import { DatabaseService } from 'src/app/services/database.service';
 	styleUrls: ['./profile.component.sass']
 })
 export class ProfileComponent {
-	character: Character = {name: 'Neuer Charakter'}
-	
+	character: Character = { name: 'Neuer Charakter' }
+
 	ngOnInit() {
 		this.setCharacter()
 	}
 
 	setCharacter() {
 		const id = Number(this.route.snapshot.paramMap.get('id'))
-		console.log(id);
-		var characterFromDB: Character | undefined
-		this.databaseService.getCharacterFromDbById(id).subscribe((character) => characterFromDB = character)
-		console.log(characterFromDB);
-		
-		if (typeof characterFromDB != "undefined") {
-			this.character = characterFromDB
-		}
-		console.log(this.character);
+		this.databaseService.getCharacterFromDbById(id).subscribe((character) => {
+			if (typeof character != "undefined") {
+				this.character = character
+			}
+		})
 	}
 
 	constructor(
 		private route: ActivatedRoute,
 		private databaseService: DatabaseService
-	) {}
+	) { }
 }
