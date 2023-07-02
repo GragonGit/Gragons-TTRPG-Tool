@@ -13,14 +13,14 @@ export class DatabaseService {
 	}
 
 	getCharacterFromDbById(id: number) {
-		return liveQuery(() => db.characters.get(id))
+		return db.characters.get(id)
 	}
 
 	addCharacterToDb(character: Character) {
 		db.characters.add(character)
 	}
 
-	putCharacter(character: Character) {
-		db.characters.put(character, character.id)
+	updateCharacter(character: Character, changes: any) {
+		db.characters.update(character, changes)
 	}
 }

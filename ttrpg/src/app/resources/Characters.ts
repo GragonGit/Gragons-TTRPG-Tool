@@ -5,4 +5,6 @@ export const Characters: Character[] = [
 	{ name: 'Zweilas' }
 ]
 
-export const newCharacter: Character = 	{ name: 'Neuer Charakter' }
+export const newCharacter: Character = { name: 'Neuer Charakter' }
+
+export const emptyCharacter: Character = { name: '' }

@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Character } from 'src/app/models/Character';
+import { newCharacter, emptyCharacter } from 'src/app/resources/Characters';
+
 import { DatabaseService } from 'src/app/services/database.service';
 
 @Component({
@@ -10,7 +12,7 @@ import { DatabaseService } from 'src/app/services/database.service';
 	styleUrls: ['./profile.component.sass']
 })
 export class ProfileComponent {
-	character: Character = { name: 'Neuer Charakter' }
+	character: Character = emptyCharacter
 
 	ngOnInit() {
 		this.setCharacter()
@@ -18,9 +20,12 @@ export class ProfileComponent {
 
 	setCharacter() {
 		const id = Number(this.route.snapshot.paramMap.get('id'))
-		this.databaseService.getCharacterFromDbById(id).subscribe((character) => {
+		this.databaseService.getCharacterFromDbById(id).then((character) => {
 			if (typeof character != "undefined") {
 				this.character = character
+			} else {
+				this.character = newCharacter
+				this.databaseService.addCharacterToDb(this.character)
 			}
 		})
 	}
