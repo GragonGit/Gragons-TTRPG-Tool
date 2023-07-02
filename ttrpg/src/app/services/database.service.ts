@@ -19,4 +19,8 @@ export class DatabaseService {
 	addCharacterToDb(character: Character) {
 		db.characters.add(character)
 	}
+
+	putCharacter(character: Character) {
+		db.characters.put(character, character.id)
+	}
 }
