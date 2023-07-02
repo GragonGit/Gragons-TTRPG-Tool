@@ -24,7 +24,7 @@ export class ProfileComponent {
 			if (typeof character != "undefined") {
 				this.character = character
 			} else {
-				this.character = newCharacter
+				this.character = Object.assign({}, newCharacter)
 				this.databaseService.addCharacterToDb(this.character)
 			}
 		})

@@ -11,9 +11,6 @@ import { DatabaseService } from "../../../services/database.service";
 export class StartscreenComponent {
 	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb()
 
-	ngOnInit() {
-	}
-
 	constructor(
 		private databaseService: DatabaseService
 	) { }
