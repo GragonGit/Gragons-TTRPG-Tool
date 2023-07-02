@@ -17,6 +17,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 import { DrawerComponent } from './components/main/drawer/drawer.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
+import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
+import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { CharacterNameComponent } from './components/elements/input/character-na
 		StartscreenComponent,
 		DrawerComponent,
 		ProfileComponent,
-		CharacterNameComponent
+		CharacterNameComponent,
+  DeleteCharacterButtonComponent,
+  CharacterListElementComponent
 	],
 	imports: [
 		BrowserModule,

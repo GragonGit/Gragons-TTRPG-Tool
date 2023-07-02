@@ -1,0 +1,7 @@
+<button class="show-child-on-hover" mat-list-item (mouseleave)="onCharacterButtonLeave()"
+	routerLink="{{'../profile/' + character.id}}">
+	<span class="center-vertically space-between">
+		{{character.name}}
+		<app-delete-character-button class="hidden-child" [character]="character"></app-delete-character-button>
+	</span>
+</button>

@@ -23,4 +23,8 @@ export class DatabaseService {
 	updateCharacter(character: Character, changes: any) {
 		db.characters.update(character, changes)
 	}
+
+	deleteCharacter(character: Character) {
+		if (character.id) { db.characters.delete(character.id) }
+	}
 }

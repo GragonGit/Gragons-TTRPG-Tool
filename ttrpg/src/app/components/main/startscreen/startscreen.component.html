@@ -1,15 +1,15 @@
 <h1>Wilkommen zu Gragon's TTRPG Tool</h1>
+
 <mat-action-list>
-	<div mat-subheader class="center-vertically">
+	<div mat-subheader class="center-vertically space-between">
 		<h2>Deine Charaktere</h2>
-		<button class="default-margin-left" mat-mini-fab color="primary" routerLink="../profile/0">
+		<button mat-mini-fab color="primary" routerLink="../profile/0">
 			<mat-icon fontIcon="add"></mat-icon>
 		</button>
 	</div>
 	<mat-divider></mat-divider>
-	<button mat-list-item routerLink="{{'../profile/' + character.id}}" *ngFor="let character of characters | async">
-		{{character.name}}
-	</button>
+
+	<app-character-list-element [character]="character" *ngFor="let character of characters | async"></app-character-list-element>
 	<button mat-list-item routerLink="../profile/0">
 		<span class="center-vertically">
 			<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>

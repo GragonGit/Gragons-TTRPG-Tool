@@ -1,6 +1,7 @@
 import Dexie, { Table } from 'dexie';
 import { Character } from "../models/Character";
 import { Characters } from "../resources/Characters";
+import { environment } from 'src/environments/environment.development';
 
 export class AppDB extends Dexie {
 	characters!: Table<Character, number>;
@@ -14,7 +15,9 @@ export class AppDB extends Dexie {
 	}
 
 	async populate() {
-		await db.characters.bulkAdd(Characters);
+		if (!environment.production) {
+			await db.characters.bulkAdd(Characters);
+		}
 	}
 }
 

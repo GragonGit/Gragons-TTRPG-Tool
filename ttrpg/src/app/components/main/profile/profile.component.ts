@@ -21,7 +21,7 @@ export class ProfileComponent {
 	setCharacter() {
 		const id = Number(this.route.snapshot.paramMap.get('id'))
 		this.databaseService.getCharacterFromDbById(id).then((character) => {
-			if (typeof character != "undefined") {
+			if (character) {
 				this.character = character
 			} else {
 				this.character = Object.assign({}, newCharacter)
