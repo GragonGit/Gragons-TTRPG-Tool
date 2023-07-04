@@ -1,3 +1,5 @@
+@use '@angular/material' as mat
+
 .space-evenly
 	display: flex
 	justify-content: space-evenly
@@ -18,20 +20,17 @@
 	display: block
 	float: right
 
-
 .full-height
 	height: 100%
 
 .full-width
 	width: 100%
 
-
 .show-child-on-hover .hidden-child
 	visibility: hidden
 
 .show-child-on-hover:hover .hidden-child
 	visibility: visible
-
 
 .default-margin
 	margin: 20px
@@ -53,3 +52,6 @@
 
 .default-margin-left
 	margin-left: 20px
+
+.less-important-text
+	color: mat.get-color-from-palette(mat.$gray-palette, 500)

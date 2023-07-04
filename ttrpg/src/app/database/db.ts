@@ -9,7 +9,7 @@ export class AppDB extends Dexie {
 	constructor() {
 		super('ngdexieliveQuery');
 		this.version(3).stores({
-			characters: '++id, name',
+			characters: '++id, name, lastOpened',
 		});
 		this.on('populate', () => this.populate());
 	}
