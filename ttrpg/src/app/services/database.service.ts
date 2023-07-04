@@ -8,8 +8,14 @@ import { Character } from '../models/Character';
 })
 export class DatabaseService {
 
-	getAllCharactersFromDb() {
-		return liveQuery(() => db.characters.toArray())
+	getAllCharactersFromDb(sortBy: string = '', reversed: boolean = false) {
+		return liveQuery(() => {
+			const collection = db.characters.toCollection()
+			if (reversed) {
+				collection.reverse()
+			}
+			return collection.sortBy(sortBy)
+		})
 	}
 
 	getCharacterFromDbById(id: number) {

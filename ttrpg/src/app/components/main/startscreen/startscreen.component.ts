@@ -9,7 +9,7 @@ import { DatabaseService } from "../../../services/database.service";
 	styleUrls: ['./startscreen.component.sass']
 })
 export class StartscreenComponent {
-	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb()
+	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb('lastOpened', true)
 
 	constructor(
 		private databaseService: DatabaseService
