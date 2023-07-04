@@ -17,7 +17,7 @@ export class DatabaseService {
 	}
 
 	addCharacterToDb(character: Character) {
-		db.characters.add(character)
+		return db.characters.add(character)
 	}
 
 	updateCharacter(character: Character, changes: any) {

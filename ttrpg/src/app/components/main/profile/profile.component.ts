@@ -23,9 +23,11 @@ export class ProfileComponent {
 		this.databaseService.getCharacterFromDbById(id).then((character) => {
 			if (character) {
 				this.character = character
+				this.databaseService.updateCharacter(this.character, { lastOpened: new Date })
 			} else {
 				this.character = Object.assign({}, newCharacter)
 				this.databaseService.addCharacterToDb(this.character)
+					.then(() => this.databaseService.updateCharacter(this.character, { lastOpened: new Date }))
 			}
 		})
 	}
