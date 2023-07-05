@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { CustomDatePipe } from "./pipes/custom.datepipe";
+import { TruncatePipe } from "./pipes/custom.truncatepipe";
 
 import { MatButtonModule } from "@angular/material/button";
 import { MatCardModule } from '@angular/material/card';
@@ -28,6 +29,7 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		AppComponent,
 
 		CustomDatePipe,
+		TruncatePipe,
 		
 		StartscreenComponent,
 		DrawerComponent,
