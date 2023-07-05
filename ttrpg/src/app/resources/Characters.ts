@@ -8,4 +8,4 @@ export const Characters: Character[] = [
 
 export const newCharacter: Character = { name: 'Neuer Charakter' }
 
-export const emptyCharacter: Character = {}
+export const emptyCharacter: Character = { name: '' }
