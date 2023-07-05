@@ -3,7 +3,7 @@
 	<span class="center-vertically space-between">
 		<span>
 			{{character.name}}
-			<span *ngIf="character.lastOpened" class="less-important-text">Zuletzt geöffnet: {{character.lastOpened | lastOpenedDate}}</span>
+			<span *ngIf="character.lastOpened" class="less-important-text">Zuletzt geöffnet: {{character.lastOpened | ttrpgDateFormat}}</span>
 		</span>
 		<app-delete-character-button class="hidden-child" [character]="character"></app-delete-character-button>
 	</span>
