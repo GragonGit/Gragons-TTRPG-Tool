@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Character } from 'src/app/models/Character';
-import { newCharacter, emptyCharacter } from 'src/app/resources/Characters';
+import { newCharacter, emptyCharacter } from 'src/app/resources/constants/Characters';
 
 import { DatabaseService } from 'src/app/services/database.service';
 

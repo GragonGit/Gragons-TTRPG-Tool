@@ -1,6 +1,6 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { Character } from 'src/app/models/Character';
-import { emptyCharacter } from 'src/app/resources/Characters';
+import { emptyCharacter } from 'src/app/resources/constants/Characters';
 import { DeleteCharacterButtonComponent } from '../delete-character-button/delete-character-button.component';
 
 @Component({
