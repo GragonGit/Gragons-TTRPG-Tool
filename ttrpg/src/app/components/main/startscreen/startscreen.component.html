@@ -1,19 +1,22 @@
-<h1>Wilkommen zu Gragon's TTRPG Tool</h1>
+<h1 class="center-horizontally">Wilkommen zu Gragon's TTRPG Tool</h1>
 
-<mat-action-list>
-	<div mat-subheader class="center-vertically space-between">
-		<h2>Deine Charaktere</h2>
-		<button mat-mini-fab color="primary" routerLink="../profile/0">
-			<mat-icon fontIcon="add"></mat-icon>
+<section class="center-horizontally">
+	<mat-action-list class="characterSelectionList">
+		<div mat-subheader class="center-vertically space-between">
+			<h2>Deine Charaktere</h2>
+			<button mat-mini-fab color="primary" routerLink="../profile/0">
+				<mat-icon fontIcon="add"></mat-icon>
+			</button>
+		</div>
+		<mat-divider></mat-divider>
+
+		<app-character-list-element [character]="character"
+			*ngFor="let character of characters | async"></app-character-list-element>
+		<button mat-list-item routerLink="../profile/0">
+			<span class="center-vertically">
+				<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>
+				Neuen Charakter erstellen
+			</span>
 		</button>
-	</div>
-	<mat-divider></mat-divider>
-
-	<app-character-list-element [character]="character" *ngFor="let character of characters | async"></app-character-list-element>
-	<button mat-list-item routerLink="../profile/0">
-		<span class="center-vertically">
-			<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>
-			Neuen Charakter erstellen
-		</span>
-	</button>
-</mat-action-list>
+	</mat-action-list>
+</section>

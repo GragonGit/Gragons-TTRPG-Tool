@@ -1,9 +1,3 @@
 <mat-drawer-container class="full-height">
-	<mat-drawer mode="side" opened="{{characterSelected}}">
-		<app-drawer></app-drawer>
-	</mat-drawer>
-	<mat-drawer-content class="center-vertically center-horizontally">
-		<button mat-raised-button (click)="themeButtonToggle($event)">Hallo</button>
-		<router-outlet></router-outlet>
-	</mat-drawer-content>
+	<router-outlet></router-outlet>
 </mat-drawer-container>

@@ -19,7 +19,6 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
-import { DrawerComponent } from './components/main/drawer/drawer.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
 
@@ -32,7 +31,6 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		TruncatePipe,
 
 		StartscreenComponent,
-		DrawerComponent,
 		ProfileComponent,
 		CharacterNameComponent,
 		DeleteCharacterButtonComponent,
