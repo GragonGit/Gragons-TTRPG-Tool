@@ -1,6 +1,6 @@
 <button class="show-child-on-hover" mat-list-item (mouseleave)="onCharacterButtonLeave()"
 	routerLink="{{'../profile/' + character.id}}">
-	<span class="center-vertically space-between">
+	<span class="center-items-vertically space-between">
 		<span>
 			{{character.name | truncate}}
 			<span *ngIf="character.lastOpened" class="less-important-text">
