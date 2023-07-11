@@ -1,6 +1,7 @@
 import { Component, HostBinding } from '@angular/core';
 import { environment } from 'src/environments/environment.development';
 import { db } from "./database/db";
+import * as icons from './resources/constants/Icons';
 import * as themes from './resources/constants/Themes';
 
 @Component({
@@ -10,6 +11,7 @@ import * as themes from './resources/constants/Themes';
 })
 export class AppComponent {
 	@HostBinding('class') className = themes.darkMode;
+	themeIcon: string = icons.lightModeIcon
 	characterSelected: boolean = false
 
 	ngOnInit() {
@@ -19,8 +21,9 @@ export class AppComponent {
 		}
 	}
 
-	themeButtonToggle(event: MouseEvent) {
+	themeButtonToggle() {
 		this.className = this.className === themes.lightMode ? themes.darkMode : themes.lightMode
+		this.themeIcon = this.className === themes.lightMode ? icons.darkModeIcon : icons.lightModeIcon
 	}
 
 }
