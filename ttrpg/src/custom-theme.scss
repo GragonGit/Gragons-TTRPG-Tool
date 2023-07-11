@@ -3,17 +3,28 @@
 
 @include mat.core();
 
-
 $ttrpg-primary: mat.define-palette(palette.$ttrpg-purple-palette);
 $ttrpg-accent: mat.define-palette(palette.$ttrpg-blue-palette);
 $ttrpg-warn: mat.define-palette(mat.$red-palette);
 
-$ttrpg-theme: mat.define-dark-theme((color: (primary: $ttrpg-primary,
+$ttrpg-light-theme: mat.define-light-theme((color: (primary: $ttrpg-primary,
 				accent: $ttrpg-accent,
 				warn: $ttrpg-warn,
 			)));
 
-@include mat.all-component-themes($ttrpg-theme);
+$ttrpg-dark-theme: mat.define-dark-theme((color: (primary: $ttrpg-primary,
+				accent: $ttrpg-accent,
+				warn: $ttrpg-warn,
+			)));
+
+
+.lightMode {
+	@include mat.all-component-themes($ttrpg-light-theme);
+}
+
+.darkMode {
+	@include mat.all-component-themes($ttrpg-dark-theme);
+}
 
 
 html,

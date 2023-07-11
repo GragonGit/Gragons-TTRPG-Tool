@@ -30,7 +30,7 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 
 		CustomDatePipe,
 		TruncatePipe,
-		
+
 		StartscreenComponent,
 		DrawerComponent,
 		ProfileComponent,
