@@ -1,6 +1,16 @@
 <mat-drawer-container class="full-height">
 	<router-outlet></router-outlet>
 	<mat-toolbar class="align-bottom center-horizontally" color="primary">
+		<section>
+			<button mat-icon-button>
+				<mat-icon fontIcon="home"></mat-icon>
+			</button>
+			<span *ngIf="characterSelected | async">
+				<button mat-icon-button>
+					<mat-icon fontIcon="computer"></mat-icon>
+				</button>
+			</span>
+		</section>
 		<section class="align-right">
 			<button class="default-margin-horizontal" mat-icon-button (click)="themeButtonToggle()">
 				<mat-icon [fontIcon]="themeIcon"></mat-icon>

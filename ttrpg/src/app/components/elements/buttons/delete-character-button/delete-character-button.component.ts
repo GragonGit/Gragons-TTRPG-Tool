@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Character } from 'src/app/models/Character';
 import { emptyCharacter } from 'src/app/resources/constants/Characters';
-import { DatabaseService } from 'src/app/services/database.service';
+import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
 	selector: 'app-delete-character-button',
@@ -22,7 +22,7 @@ export class DeleteCharacterButtonComponent {
 				break;
 
 			case "confirm":
-				this.databaseService.deleteCharacter(this.character)
+				this.characterService.deleteCharacter(this.character)
 				break;
 
 			case "cancel": default:
@@ -31,6 +31,6 @@ export class DeleteCharacterButtonComponent {
 	}
 
 	constructor(
-		private databaseService: DatabaseService
+		private characterService: CharacterService
 	) { }
 }

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Character } from 'src/app/models/Character';
-import { newCharacter, emptyCharacter } from 'src/app/resources/constants/Characters';
+import { emptyCharacter, newCharacter } from 'src/app/resources/constants/Characters';
 
-import { DatabaseService } from 'src/app/services/database.service';
+import { CharacterService } from 'src/app/services/character.service';
 
 @Component({
 	selector: 'app-profile',
@@ -20,20 +20,21 @@ export class ProfileComponent {
 
 	setCharacter() {
 		const id = Number(this.route.snapshot.paramMap.get('id'))
-		this.databaseService.getCharacterFromDbById(id).then((character) => {
+		this.characterService.getCharacterFromDbById(id).then((character) => {
 			if (character) {
 				this.character = character
-				this.databaseService.updateCharacter(this.character, { lastOpened: new Date })
+				this.characterService.updateCharacter(this.character, { lastOpened: new Date })
 			} else {
 				this.character = Object.assign({}, newCharacter)
-				this.databaseService.addCharacterToDb(this.character)
-					.then(() => this.databaseService.updateCharacter(this.character, { lastOpened: new Date }))
+				this.characterService.addCharacterToDb(this.character)
+					.then(() => this.characterService.updateCharacter(this.character, { lastOpened: new Date }))
 			}
+			this.characterService.setCharacterSelected(true)
 		})
 	}
 
 	constructor(
 		private route: ActivatedRoute,
-		private databaseService: DatabaseService
+		private characterService: CharacterService
 	) { }
 }

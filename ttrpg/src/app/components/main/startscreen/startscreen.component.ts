@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'dexie';
 import { Character } from 'src/app/models/Character';
-import { DatabaseService } from "../../../services/database.service";
+import { CharacterService } from "../../../services/character.service";
 
 @Component({
 	selector: 'app-startscreen',
@@ -9,9 +9,13 @@ import { DatabaseService } from "../../../services/database.service";
 	styleUrls: ['./startscreen.component.sass']
 })
 export class StartscreenComponent {
-	characters: Observable<Character[]> = this.databaseService.getAllCharactersFromDb('lastOpened', true)
+	characters: Observable<Character[]> = this.characterService.getAllCharactersFromDb('lastOpened', true)
+
+	ngOnInit() {
+		this.characterService.setCharacterSelected(false)
+	}
 
 	constructor(
-		private databaseService: DatabaseService
+		private characterService: CharacterService
 	) { }
 }
