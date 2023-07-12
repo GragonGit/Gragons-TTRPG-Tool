@@ -1,15 +1,15 @@
 <mat-drawer-container class="full-height">
 	<router-outlet></router-outlet>
 	<mat-toolbar class="align-bottom center-horizontally" color="primary">
-		<section>
-			<button mat-icon-button>
+		<section class="align-left">
+			<button class="default-margin-horizontal" mat-icon-button routerLink="home">
 				<mat-icon fontIcon="home"></mat-icon>
 			</button>
-			<span *ngIf="characterSelected | async">
-				<button mat-icon-button>
-					<mat-icon fontIcon="computer"></mat-icon>
-				</button>
-			</span>
+		</section>
+		<section *ngIf="characterSelected | async">
+			<button mat-icon-button>
+				<mat-icon fontIcon="computer"></mat-icon>
+			</button>
 		</section>
 		<section class="align-right">
 			<button class="default-margin-horizontal" mat-icon-button (click)="themeButtonToggle()">

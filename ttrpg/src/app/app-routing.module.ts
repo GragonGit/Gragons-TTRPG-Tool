@@ -5,10 +5,10 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 import { ProfileComponent } from './components/main/profile/profile.component';
 
 const routes: Routes = [
-	{ path: 'start', component: StartscreenComponent },
+	{ path: 'home', component: StartscreenComponent },
 	{ path: 'profile/:id', component: ProfileComponent},
 
-	{ path: '', redirectTo: '/start', pathMatch: 'full' },
+	{ path: '', redirectTo: '/home', pathMatch: 'full' },
 	{ path: '**', component: StartscreenComponent }
 ];
 
