@@ -11,10 +11,6 @@ import { CharacterService } from "../../../services/character.service";
 export class StartscreenComponent {
 	characters: Observable<Character[]> = this.characterService.getAllCharactersFromDb('lastOpened', true)
 
-	ngOnInit() {
-		this.characterService.setCharacterSelected(false)
-	}
-
 	constructor(
 		private characterService: CharacterService
 	) { }

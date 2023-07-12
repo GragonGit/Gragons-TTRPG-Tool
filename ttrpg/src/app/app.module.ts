@@ -16,6 +16,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
 
 import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
@@ -50,7 +51,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		MatListModule,
 		MatDividerModule,
 		MatIconModule,
-		MatToolbarModule
+		MatToolbarModule,
+		MatButtonToggleModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

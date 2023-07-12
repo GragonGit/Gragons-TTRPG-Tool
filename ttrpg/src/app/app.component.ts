@@ -24,6 +24,10 @@ export class AppComponent {
 		}
 	}
 
+	homeButtonToggle() {
+		this.characterService.setCharacterSelected(false)
+	}
+
 	themeButtonToggle() {
 		this.className = this.className === themes.lightMode ? themes.darkMode : themes.lightMode
 		this.themeIcon = this.className === themes.lightMode ? icons.darkModeIcon : icons.lightModeIcon
