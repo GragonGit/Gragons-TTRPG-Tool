@@ -10,13 +10,15 @@
 		</div>
 		<mat-divider></mat-divider>
 
-		<app-character-list-element [character]="character"
-			*ngFor="let character of characters | async"></app-character-list-element>
-		<button mat-list-item routerLink="../profile/0">
-			<span class="center-items-vertically">
-				<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>
-				Neuen Charakter erstellen
-			</span>
-		</button>
+		<div class="listElements">
+			<app-character-list-element [character]="character"
+				*ngFor="let character of characters | async"></app-character-list-element>
+			<button mat-list-item routerLink="../profile/0">
+				<span class="center-items-vertically">
+					<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>
+					Neuen Charakter erstellen
+				</span>
+			</button>
+		</div>
 	</mat-action-list>
 </section>

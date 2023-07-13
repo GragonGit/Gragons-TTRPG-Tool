@@ -2,6 +2,6 @@
 
 ## To Do
 - Make character BehaviorSubject
+- Change Tauri Icons
 
 ## Bugs
-- Fix overscrolling in character selection

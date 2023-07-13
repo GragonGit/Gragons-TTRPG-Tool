@@ -39,6 +39,8 @@ body {
 
 .darkMode,
 .lightMode {
+
+	// Toggle Button
 	.mat-button-toggle-appearance-standard {
 		background-color: mat.get-color-from-palette($ttrpg-primary, 500);
 		border-radius: 100%;
@@ -52,6 +54,27 @@ body {
 
 	.mat-ripple {
 		border-radius: 100%;
+	}
+
+	// Scrollbar
+	::-webkit-scrollbar {
+		width: 5px;
+		height: 3px;
+	}
+
+	/* Track */
+	::-webkit-scrollbar-track {
+		background: none;
+	}
+
+	/* Handle */
+	::-webkit-scrollbar-thumb {
+		background: mat.get-color-from-palette($ttrpg-primary, 500);
+	}
+
+	/* Handle on hover */
+	::-webkit-scrollbar-thumb:hover {
+		background: mat.get-color-from-palette($ttrpg-primary, 400);
 	}
 }
 
