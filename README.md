@@ -1,2 +1,8 @@
 # TTRPG
-A desktop application that digitalizes many parts of TTRPGs and automates calculations to turn the focus back to actually playing the game
+
+## To Do
+- Clear db service
+
+## Bugs
+- Fix overscrolling in character selection
+- Dark Buttons in light mode
