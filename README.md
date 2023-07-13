@@ -4,4 +4,3 @@
 
 ## Bugs
 - Fix overscrolling in character selection
-- Dark Buttons in light mode

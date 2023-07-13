@@ -44,10 +44,6 @@ body {
 		border-radius: 100%;
 	}
 
-	.mat-button-toggle-checked {
-		background-color: mat.get-color-from-palette(mat.$grey-palette, 800);
-	}
-
 	.mat-button-toggle-standalone.mat-button-toggle-appearance-standard,
 	.mat-button-toggle-group-appearance-standard,
 	.mat-button-toggle-group-appearance-standard .mat-button-toggle+.mat-button-toggle {
@@ -56,5 +52,22 @@ body {
 
 	.mat-ripple {
 		border-radius: 100%;
+	}
+}
+
+.darkMode {
+	.mat-button-toggle-checked {
+		background-color: mat.get-color-from-palette(mat.$grey-palette, 800);
+	}
+}
+
+.lightMode {
+	.mat-button-toggle-appearance-standard {
+		color: white;
+	}
+
+	.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
+		background-color: mat.get-color-from-palette(mat.$grey-palette, 200);
+		color: mat.get-color-from-palette($ttrpg-primary, 500);
 	}
 }
