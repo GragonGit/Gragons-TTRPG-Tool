@@ -10,6 +10,8 @@ import { Character } from '../models/Character';
 export class CharacterService {
 	characterSelected: BehaviorSubject<boolean> = new BehaviorSubject(false)
 
+	/// [Database]
+
 	getAllCharactersFromDb(sortBy: string = '', reversed: boolean = false) {
 		return liveQuery(() => {
 			const collection = db.characters.toCollection()
@@ -35,6 +37,8 @@ export class CharacterService {
 	deleteCharacter(character: Character) {
 		if (character.id) { db.characters.delete(character.id) }
 	}
+
+	/// [Getter and Setter]
 
 	setCharacterSelected(selected: boolean) {
 		this.characterSelected.next(selected)

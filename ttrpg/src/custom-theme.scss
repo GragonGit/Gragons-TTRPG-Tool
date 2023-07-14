@@ -17,13 +17,17 @@ $ttrpg-dark-theme: mat.define-dark-theme((color: (primary: $ttrpg-primary,
 				warn: $ttrpg-warn,
 			)));
 
+@include mat.all-component-themes(mat.define-dark-theme((color: (primary: $ttrpg-primary,
+				accent: mat.define-palette(mat.$purple-palette),
+				warn: $ttrpg-warn,
+			))));
 
 .lightMode {
-	@include mat.all-component-themes($ttrpg-light-theme);
+	@include mat.all-component-colors($ttrpg-light-theme);
 }
 
 .darkMode {
-	@include mat.all-component-themes($ttrpg-dark-theme);
+	@include mat.all-component-colors($ttrpg-dark-theme);
 }
 
 
@@ -40,7 +44,8 @@ body {
 .darkMode,
 .lightMode {
 
-	// Toggle Button
+	/// [Common-Theme-Styling/Toggle Button]
+
 	.mat-button-toggle-appearance-standard {
 		background-color: mat.get-color-from-palette($ttrpg-primary, 500);
 		border-radius: 100%;
@@ -56,35 +61,37 @@ body {
 		border-radius: 100%;
 	}
 
-	// Scrollbar
+	/// [Common-Theme-Styling/Scrollbar]
+
 	::-webkit-scrollbar {
 		width: 5px;
 		height: 3px;
 	}
 
-	/* Track */
 	::-webkit-scrollbar-track {
 		background: none;
 	}
 
-	/* Handle */
 	::-webkit-scrollbar-thumb {
 		background: mat.get-color-from-palette($ttrpg-primary, 500);
 	}
 
-	/* Handle on hover */
 	::-webkit-scrollbar-thumb:hover {
 		background: mat.get-color-from-palette($ttrpg-primary, 400);
 	}
 }
 
 .darkMode {
+	/// [Dark-Mode-Styling/Toggle Button]
+
 	.mat-button-toggle-checked {
 		background-color: mat.get-color-from-palette(mat.$grey-palette, 800);
 	}
 }
 
 .lightMode {
+	/// [Light-Mode-Styling/Toggle Button]
+
 	.mat-button-toggle-appearance-standard {
 		color: white;
 	}
