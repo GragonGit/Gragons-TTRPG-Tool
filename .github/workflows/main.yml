@@ -38,6 +38,6 @@ jobs:
       run: npm install -g @angular/cli
 
     - name: Build and Deploy Angular app
-      run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit" --repo=https://github.com/GragonGit/Gragons-TTRPG-Tool.git
+      run: ng deploy --base-href=/Gragons-TTRPG-Tool/
       env:
         GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
