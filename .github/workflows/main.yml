@@ -38,4 +38,4 @@ jobs:
       run: npm install -g @angular/cli
 
     - name: Build and Deploy Angular app
-      run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit"
+      run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit" --no-silent
