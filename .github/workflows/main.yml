@@ -37,7 +37,9 @@ jobs:
     - name: Install Angular CLI
       run: npm install -g @angular/cli
 
-    - name: Build and Deploy Angular app
-      run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit"
+    - name: Prepare and deploy
       env:
-        GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      run: |
+        npm install
+        npm run ng -- deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit"
