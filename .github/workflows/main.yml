@@ -40,4 +40,4 @@ jobs:
     - name: Build and Deploy Angular app
       run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --message="Deployment Commit" --repo=https://github.com/GragonGit/Gragons-TTRPG-Tool.git
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
