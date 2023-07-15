@@ -38,6 +38,6 @@ jobs:
       run: npm install -g @angular/cli
 
     - name: Build and Deploy Angular app
-      run: ng deploy --base-href=/Gragons-TTRPG-Tool/ --no-silent
+      run: ng deploy --base-href=/Gragons-TTRPG-Tool/
       env:
-        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GH_TOKEN: ${{ secrets.GH_TOKEN }}
