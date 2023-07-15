@@ -1,1 +1,37 @@
-
+<mat-drawer-container class="full-height">
+	<router-outlet></router-outlet>
+	<mat-toolbar class="align-bottom center-horizontally" color="primary">
+		<section class="align-left">
+			<button class="default-margin-horizontal" mat-icon-button routerLink="home" (click)="homeButtonToggle()">
+				<mat-icon fontIcon="home"></mat-icon>
+			</button>
+		</section>
+		<section *ngIf="characterSelected | async">
+			<mat-button-toggle-group name="characterPage">
+				<mat-button-toggle value="profile" checked="true">
+					<mat-icon fontIcon="person"></mat-icon>
+				</mat-button-toggle>
+				<mat-button-toggle value="stats">
+					<mat-icon fontIcon="casino"></mat-icon>
+				</mat-button-toggle>
+				<mat-button-toggle value="inventory">
+					<mat-icon fontIcon="backpack"></mat-icon>
+				</mat-button-toggle>
+				<mat-button-toggle value="magic">
+					<mat-icon fontIcon="bolt"></mat-icon>
+				</mat-button-toggle>
+				<mat-button-toggle value="backstory">
+					<mat-icon fontIcon="history_edu"></mat-icon>
+				</mat-button-toggle>
+				<mat-button-toggle value="notes">
+					<mat-icon fontIcon="edit_square"></mat-icon>
+				</mat-button-toggle>
+			</mat-button-toggle-group>
+		</section>
+		<section class="align-right">
+			<button class="default-margin-horizontal" mat-icon-button (click)="themeButtonToggle()">
+				<mat-icon [fontIcon]="themeIcon"></mat-icon>
+			</button>
+		</section>
+	</mat-toolbar>
+</mat-drawer-container>
