@@ -30,7 +30,7 @@ jobs:
         run: npm install --prefix ttrpg
 
       - name: Build Angular app
-        run: npm run build --prefix ttrpg -- --prod
+        run: npm run build --prefix ttrpg -- --configuration=production
         
       - name: Setup Pages
         uses: actions/configure-pages@v3
