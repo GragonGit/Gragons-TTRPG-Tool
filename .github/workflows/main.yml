@@ -30,7 +30,7 @@ jobs:
         run: npm install --prefix ttrpg
 
       - name: Build Angular app
-        run: npm run build -- --prod
+        run: npm run build --prefix ttrpg -- --prod
         
       - name: Setup Pages
         uses: actions/configure-pages@v3
@@ -38,7 +38,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./ttrpg/src
+          source: ./dist/ttrpg
           destination: ./_site
           
       - name: Upload artifact
