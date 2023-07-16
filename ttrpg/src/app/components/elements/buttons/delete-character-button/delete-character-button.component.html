@@ -1,9 +1,9 @@
-<button class="red" mat-icon-button *ngIf="!confirmDeletion" (click)="onDeletionButtonsClick($event, 'delete')">
+<button class="red mdc-icon-button--reduced-size" mat-icon-button *ngIf="!confirmDeletion" (click)="onDeletionButtonsClick($event, 'delete')">
 	<mat-icon fontIcon="delete"></mat-icon>
 </button>
-<button class="green"  mat-icon-button *ngIf="confirmDeletion" (click)="onDeletionButtonsClick($event, 'confirm')">
+<button class="green mdc-icon-button--reduced-size" mat-icon-button *ngIf="confirmDeletion" (click)="onDeletionButtonsClick($event, 'confirm')">
 	<mat-icon fontIcon="check"></mat-icon>
 </button>
-<button class="red" mat-icon-button *ngIf="confirmDeletion" (click)="onDeletionButtonsClick($event, 'cancel')">
+<button class="red mdc-icon-button--reduced-size" mat-icon-button *ngIf="confirmDeletion" (click)="onDeletionButtonsClick($event, 'cancel')">
 	<mat-icon fontIcon="close"></mat-icon>
 </button>
