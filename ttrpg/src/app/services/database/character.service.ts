@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { liveQuery } from 'dexie';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { db } from '../database/db';
-import { Character } from '../models/Character';
+import { db } from '../../database/db';
+import { Character } from '../../models/Character';
 
 @Injectable({
 	providedIn: 'root'

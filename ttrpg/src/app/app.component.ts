@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment.development';
 import { db } from "./database/db";
 import * as icons from './resources/constants/Icons';
 import * as themes from './resources/constants/Themes';
-import { CharacterService } from './services/character.service';
+import { CharacterService } from './services/database/character.service';
 
 @Component({
 	selector: 'app-root',

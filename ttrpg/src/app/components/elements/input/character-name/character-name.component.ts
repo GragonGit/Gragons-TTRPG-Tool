@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Character } from 'src/app/models/Character';
 import { emptyCharacter } from 'src/app/resources/constants/Characters';
-import { CharacterService } from 'src/app/services/character.service';
+import { CharacterService } from 'src/app/services/database/character.service';
 
 @Component({
 	selector: 'app-character-name',

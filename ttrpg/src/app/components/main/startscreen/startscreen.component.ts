@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Observable } from 'dexie';
 import { Character } from 'src/app/models/Character';
-import { CharacterService } from "../../../services/character.service";
+import { CharacterService } from "../../../services/database/character.service";
 
 @Component({
 	selector: 'app-startscreen',
