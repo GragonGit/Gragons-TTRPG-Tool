@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { themeCookieKey } from 'src/app/resources/constants/CookieKeys';
 import { darkModeIcon, lightModeIcon } from 'src/app/resources/constants/Icons';
 import { darkMode, lightMode } from 'src/app/resources/constants/Themes';
 
@@ -9,7 +10,7 @@ import { darkMode, lightMode } from 'src/app/resources/constants/Themes';
 })
 export class ThemeService {
 	private currentIcon: BehaviorSubject<string> = new BehaviorSubject(
-		this.cookieService.get('Theme') === lightMode ? darkModeIcon : lightModeIcon)
+		this.cookieService.get(themeCookieKey) === lightMode ? darkModeIcon : lightModeIcon)
 
 	/**
 	 * Changes the theme between light and dark mode and sets related cookie accordingly
@@ -17,8 +18,8 @@ export class ThemeService {
 	 * @returns The new theme that was changed to
 	 */
 	public changeTheme(): string {
-		const newTheme = this.cookieService.get('Theme') === lightMode ? darkMode : lightMode
-		this.cookieService.put('Theme', newTheme)
+		const newTheme = this.cookieService.get(themeCookieKey) === lightMode ? darkMode : lightMode
+		this.cookieService.put(themeCookieKey, newTheme)
 		this.currentIcon.next(newTheme === lightMode ? darkModeIcon : lightModeIcon)
 		return this.getCurrentTheme()
 	}
@@ -30,7 +31,7 @@ export class ThemeService {
 	 * @returns The current theme set in cookie
 	 */
 	public getCurrentTheme(): string {
-		return this.cookieService.get('Theme') ?? darkMode
+		return this.cookieService.get(themeCookieKey) ?? darkMode
 	}
 
 	/**
