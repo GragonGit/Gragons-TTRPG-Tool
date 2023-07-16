@@ -1,6 +1,6 @@
 import { Component, HostBinding } from '@angular/core';
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 import { db } from "./database/db";
 import * as themes from './resources/constants/Themes';
 import { CharacterService } from './services/database/character.service';
@@ -20,7 +20,7 @@ export class AppComponent {
 	ngOnInit() {
 		if (!environment.production) {
 			db.delete()
-			db.open()
+			db.open()			
 		}
 		this.currentTheme = this.themeService.getCurrentTheme()
 	}

@@ -1,7 +1,7 @@
 import Dexie, { Table } from 'dexie';
 import { Character } from "../models/Character";
 import { Characters } from "../resources/constants/Characters";
-import { environment } from 'src/environments/environment.development';
+import { environment } from 'src/environments/environment';
 
 export class AppDB extends Dexie {
 	characters!: Table<Character, number>;
