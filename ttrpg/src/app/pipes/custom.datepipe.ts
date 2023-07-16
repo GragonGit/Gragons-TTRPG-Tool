@@ -7,7 +7,14 @@ registerLocaleData(localeDe, 'de');
 	name: 'ttrpgDateFormat'
 })
 export class CustomDatePipe extends DatePipe implements PipeTransform {
-	override transform(value: any, args?: any): any {
+	/**
+	 * Format a date to the TTRPG format
+	 * 
+	 * @param value The date expression: a Date object, a number (milliseconds since UTC epoch),
+	 * or an ISO string (https://www.w3.org/TR/NOTE-datetime).
+	 * @returns The formated date
+	 */
+	public override transform(value: any): any {
 		return super.transform(value, "d MMMM y", 'UTC', 'de');
 	}
 }

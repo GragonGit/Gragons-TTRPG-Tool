@@ -13,23 +13,30 @@ import { ThemeService } from './services/settings/theme.service';
 })
 export class AppComponent {
 	@HostBinding('class') currentTheme = themes.darkMode;
-	themeIcon: Observable<string> = this.themeService.getCurrentIcon()
 
-	characterSelected: Observable<boolean> = this.characterService.isCharacterSelected()
+	public themeIcon: Observable<string> = this.themeService.getCurrentIcon()
+	public characterSelected: Observable<boolean> = this.characterService.isCharacterSelected()
 
-	ngOnInit() {
+	ngOnInit(): void {
 		if (!environment.production) {
 			db.delete()
 			db.open()			
 		}
+
 		this.currentTheme = this.themeService.getCurrentTheme()
 	}
 
-	homeButtonToggle() {
+	/**
+	 * Executes tasks related to pressing the home button
+	 */
+	public homeButtonToggle(): void {
 		this.characterService.setCharacterSelected(false)
 	}
 
-	themeButtonToggle() {
+	/**
+	 * Executes tasks related to pressing the theme button
+	 */
+	public themeButtonToggle(): void {
 		this.currentTheme = this.themeService.changeTheme()
 	}
 

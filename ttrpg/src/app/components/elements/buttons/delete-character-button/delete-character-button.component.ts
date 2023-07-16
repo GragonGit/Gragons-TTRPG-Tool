@@ -10,23 +10,32 @@ import { CharacterService } from 'src/app/services/database/character.service';
 })
 export class DeleteCharacterButtonComponent {
 	@Input() character: Character = emptyCharacter
-	confirm: boolean = false
+	public confirmDeletion: boolean = false
 
-	buttonClick(event: MouseEvent, button: string) {
+	/**
+	 * Executes tasks related to clicking one of the deletion buttons
+	 * 
+	 * @param event The click event
+	 * @param button The button which is pressed
+	 */
+	public onDeletionButtonsClick(event: MouseEvent, button: string): void {
 		event.preventDefault();
 		event.stopPropagation();
 
 		switch (button) {
+			// Change to confirm buttons
 			case "delete":
-				this.confirm = true
+				this.confirmDeletion = true
 				break;
 
+			// Delete character from db
 			case "confirm":
-				this.characterService.deleteCharacter(this.character)
+				this.characterService.deleteCharacterFromDb(this.character)
 				break;
 
+			// Cancel confirmation
 			case "cancel": default:
-				this.confirm = false
+				this.confirmDeletion = false
 		}
 	}
 

@@ -11,8 +11,11 @@ import { CharacterService } from 'src/app/services/database/character.service';
 export class CharacterNameComponent {
 	@Input() character: Character = emptyCharacter
 
-	onChange() {
-		this.characterService.updateCharacter(this.character, { name: this.character.name })
+	/**
+	 * Executes tasks related to changes in the name input
+	 */
+	public onNameInputChange(): void {
+		this.characterService.updateCharacterInDb(this.character, { name: this.character.name })
 	}
 
 	constructor(

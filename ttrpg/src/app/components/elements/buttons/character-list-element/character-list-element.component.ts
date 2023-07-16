@@ -13,6 +13,6 @@ export class CharacterListElementComponent {
 	@ViewChild(DeleteCharacterButtonComponent) deleteButton!: DeleteCharacterButtonComponent;
 
 	onCharacterButtonLeave() {
-		this.deleteButton.confirm = false
+		this.deleteButton.confirmDeletion = false
 	}
 }

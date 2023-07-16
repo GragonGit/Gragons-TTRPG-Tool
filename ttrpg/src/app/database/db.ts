@@ -4,7 +4,7 @@ import { Characters } from "../resources/constants/Characters";
 import { environment } from 'src/environments/environment';
 
 export class AppDB extends Dexie {
-	characters!: Table<Character, number>;
+	public characters!: Table<Character, number>;
 
 	constructor() {
 		super('ngdexieliveQuery');
@@ -14,7 +14,10 @@ export class AppDB extends Dexie {
 		this.on('populate', () => this.populate());
 	}
 
-	async populate() {
+	/**
+	 * Fills the database with characters when in development
+	 */
+	private async populate() {
 		if (!environment.production) {
 			await db.characters.bulkAdd(Characters);
 		}
