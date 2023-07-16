@@ -8,16 +8,18 @@ import { darkMode, lightMode } from 'src/app/resources/constants/Themes';
 	providedIn: 'root'
 })
 export class ThemeService {
-	private currentTheme: string = darkMode
-	private currentIcon: BehaviorSubject<string> = new BehaviorSubject(lightModeIcon)
+	private currentIcon: BehaviorSubject<string> = new BehaviorSubject(
+		this.cookieService.get('Theme') === lightMode ? darkModeIcon : lightModeIcon)
 
 	changeTheme() {
-		this.currentTheme = this.currentTheme === lightMode ? darkMode : lightMode
-		this.currentIcon.next(this.currentTheme === lightMode ? darkModeIcon : lightModeIcon)
+		const newTheme = this.cookieService.get('Theme') === lightMode ? darkMode : lightMode
+		this.cookieService.put('Theme', newTheme)
+		this.currentIcon.next(newTheme === lightMode ? darkModeIcon : lightModeIcon)
+		return this.getCurrentTheme()
 	}
 
 	getCurrentTheme() {
-		return this.currentTheme
+		return this.cookieService.get('Theme') ?? darkMode
 	}
 
 	getCurrentIcon() {

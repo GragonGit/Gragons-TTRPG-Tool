@@ -12,7 +12,7 @@ import { ThemeService } from './services/settings/theme.service';
 	styleUrls: ['./app.component.sass']
 })
 export class AppComponent {
-	@HostBinding('class') className = themes.darkMode;
+	@HostBinding('class') currentTheme = themes.darkMode;
 	themeIcon: Observable<string> = this.themeService.getCurrentIcon()
 
 	characterSelected: Observable<boolean> = this.characterService.isCharacterSelected()
@@ -22,6 +22,7 @@ export class AppComponent {
 			db.delete()
 			db.open()
 		}
+		this.currentTheme = this.themeService.getCurrentTheme()
 	}
 
 	homeButtonToggle() {
@@ -29,8 +30,7 @@ export class AppComponent {
 	}
 
 	themeButtonToggle() {
-		this.themeService.changeTheme()
-		this.className = this.themeService.getCurrentTheme()
+		this.currentTheme = this.themeService.changeTheme()
 	}
 
 	constructor(
