@@ -1,13 +1,3 @@
-# TTRPG
+# Gragons TTRPG Tool
 
-## To Do
-- Change Tauri Icons
-- More icons in toolbar for navigation
-	- Profile
-	- Stats
-	- Inventory
-	- Magic
-	- Backstory History
-	- Notes
-
-## Bugs
+Any PR should merge into the Version 1.0.0 branch until the project is fully released
