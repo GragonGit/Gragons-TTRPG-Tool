@@ -1,0 +1,26 @@
+<button mat-icon-button class="default-margin-left" [matMenuTriggerFor]="menu" yPosition="above">
+	<mat-icon fontIcon="menu"></mat-icon>
+</button>
+<mat-menu class="menu" #menu="matMenu">
+	<button class="small-margin-bottom" mat-mini-fab value="profile" color="primary">
+		<mat-icon fontIcon="person"></mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="stats" color="primary">
+		<mat-icon fontIcon="casino"></mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="inventory" color="primary">
+		<mat-icon fontIcon="backpack"></mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="magic" color="primary">
+		<mat-icon fontIcon="bolt"></mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="backstory" color="primary">
+		<mat-icon fontIcon="history_edu"></mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="notes" color="primary">
+		<mat-icon fontIcon="edit_square">Notizen</mat-icon>
+	</button>
+	<button class="small-margin-bottom" mat-mini-fab value="home" color="primary" routerLink="home">
+		<mat-icon fontIcon="home"></mat-icon>
+	</button>
+</mat-menu>

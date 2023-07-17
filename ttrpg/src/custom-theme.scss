@@ -41,6 +41,21 @@ body {
 	font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
+.menu {
+	background: none;
+	box-shadow: none !important;
+	padding-left: 3px !important;
+}
+
+.mat-mdc-menu-panel.mat-mdc-menu-panel {
+	min-width: 0 !important;
+	width: 60px !important;
+}
+
+.mat-mdc-menu-item .mat-icon {
+	margin: 0 !important;
+}
+
 .darkMode,
 .lightMode {
 

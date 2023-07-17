@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
 	styleUrls: ['./navigation-buttons.component.sass']
 })
 export class NavigationButtonsComponent {
-	@Input() vertical: boolean = false
+
 }
