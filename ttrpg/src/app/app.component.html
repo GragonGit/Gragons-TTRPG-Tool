@@ -1,8 +1,8 @@
 <mat-drawer-container class="full-height">
-	<router-outlet></router-outlet>
+	<router-outlet (activate)="routerOutletActivation()"></router-outlet>
 	<mat-toolbar class="align-bottom center-horizontally" color="primary">
 		<section class="align-left">
-			<button class="default-margin-horizontal" mat-icon-button routerLink="home">
+			<button class="default-margin-horizontal" mat-icon-button routerLink="home" (click)="homeButtonToggle()">
 				<mat-icon fontIcon="home"></mat-icon>
 			</button>
 		</section>

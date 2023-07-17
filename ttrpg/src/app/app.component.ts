@@ -1,4 +1,5 @@
 import { Component, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { db } from "./database/db";
@@ -20,10 +21,17 @@ export class AppComponent {
 	ngOnInit(): void {
 		if (!environment.production) {
 			db.delete()
-			db.open()			
+			db.open()
 		}
 
 		this.currentTheme = this.themeService.getCurrentTheme()
+	}
+
+	/**
+	 * Executes tasks related to pressing the home button
+	 */
+	public homeButtonToggle(): void {
+		this.characterService.setCharacterSelected(false)
 	}
 
 	/**
@@ -33,7 +41,19 @@ export class AppComponent {
 		this.currentTheme = this.themeService.changeTheme()
 	}
 
+	/**
+	 * Executes tasks related to changes of the router outlet
+	 */
+	public routerOutletActivation() {
+		const url = this.route.url
+
+		if (url.includes('/home')) {
+			this.homeButtonToggle()
+		}
+	}
+
 	constructor(
+		private route: Router,
 		private characterService: CharacterService,
 		private themeService: ThemeService
 	) { }
