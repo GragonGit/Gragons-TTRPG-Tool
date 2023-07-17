@@ -28,13 +28,6 @@ export class AppComponent {
 	}
 
 	/**
-	 * Executes tasks related to pressing the home button
-	 */
-	public homeButtonToggle(): void {
-		this.characterService.setCharacterSelected(false)
-	}
-
-	/**
 	 * Executes tasks related to pressing the theme button
 	 */
 	public themeButtonToggle(): void {
@@ -48,7 +41,7 @@ export class AppComponent {
 		const url = this.route.url
 
 		if (url.includes('/home')) {
-			this.homeButtonToggle()
+			this.characterService.setCharacterSelected(false)
 		}
 	}
 
