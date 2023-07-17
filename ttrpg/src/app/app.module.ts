@@ -25,6 +25,7 @@ import { DeleteCharacterButtonComponent } from './components/elements/buttons/de
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
+import { NavigationButtonsComponent } from './components/elements/buttons/navigation-buttons/navigation-buttons.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		ProfileComponent,
 		CharacterNameComponent,
 		DeleteCharacterButtonComponent,
-		CharacterListElementComponent
+		CharacterListElementComponent,
+  NavigationButtonsComponent
 	],
 	imports: [
 		BrowserModule,
