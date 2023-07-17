@@ -27,13 +27,6 @@ export class AppComponent {
 	}
 
 	/**
-	 * Executes tasks related to pressing the home button
-	 */
-	public homeButtonToggle(): void {
-		this.characterService.setCharacterSelected(false)
-	}
-
-	/**
 	 * Executes tasks related to pressing the theme button
 	 */
 	public themeButtonToggle(): void {
