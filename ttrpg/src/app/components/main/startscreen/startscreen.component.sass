@@ -1,11 +1,24 @@
+.welcome-title
+	@media (max-width: 270px)
+		font-size: x-large
+
 .characterSelectionList
 	min-width: 35rem
 	width: 50rem
 	max-width: 50rem
 
+	@media (max-width: 560px)
+		min-width: 14rem
+
 .listElements
 	max-height: calc( 100vh - 16rem )
 	overflow: auto
+
+	@media (max-width: 560px)
+		max-height: calc( 100vh - 20rem )
+
+	@media (max-width: 270px)
+		max-height: calc( 100vh - 21rem )
 
 .newCharacterFab
 	margin: 4px
