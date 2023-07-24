@@ -30,6 +30,7 @@ import { NavigationListComponent } from './components/elements/buttons/navigatio
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
+import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 
 
 @NgModule({
@@ -46,7 +47,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		CharacterListElementComponent,
 		NavigationButtonsComponent,
 		NavigationListComponent,
-		CookieBannerComponent
+		CookieBannerComponent,
+		SettingsListComponent
 	],
 	imports: [
 		BrowserModule,

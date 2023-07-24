@@ -18,10 +18,6 @@
 		<section *ngIf="characterSelected | async">
 			<app-navigation-buttons class="navigation-full-size"></app-navigation-buttons>
 		</section>
-		<section class="align-right">
-			<button class="default-margin-horizontal" mat-icon-button (click)="themeButtonToggle()">
-				<mat-icon [fontIcon]="(themeIcon | async) ?? 'light_mode'"></mat-icon>
-			</button>
-		</section>
+		<app-settings-list class="align-right default-margin-horizontal"></app-settings-list>
 	</mat-toolbar>
 </mat-drawer-container>

@@ -9,6 +9,9 @@ import { darkMode, lightMode } from 'src/app/resources/constants/Themes';
 	providedIn: 'root'
 })
 export class ThemeService {
+	private currentTheme: BehaviorSubject<string> = new BehaviorSubject(
+		this.cookieService.get(themeCookieKey) === lightMode ? lightMode : darkMode)
+
 	private currentIcon: BehaviorSubject<string> = new BehaviorSubject(
 		this.cookieService.get(themeCookieKey) === lightMode ? darkModeIcon : lightModeIcon)
 
@@ -17,11 +20,11 @@ export class ThemeService {
 	 * 
 	 * @returns The new theme that was changed to
 	 */
-	public changeTheme(): string {
+	public changeTheme(): void {
 		const newTheme = this.cookieService.get(themeCookieKey) === lightMode ? darkMode : lightMode
 		this.cookieService.put(themeCookieKey, newTheme)
+		this.currentTheme.next(newTheme)
 		this.currentIcon.next(newTheme === lightMode ? darkModeIcon : lightModeIcon)
-		return this.getCurrentTheme()
 	}
 
 	/**
@@ -30,8 +33,8 @@ export class ThemeService {
 	 * 
 	 * @returns The current theme set in cookie
 	 */
-	public getCurrentTheme(): string {
-		return this.cookieService.get(themeCookieKey) ?? darkMode
+	public getCurrentTheme(): Observable<string> {
+		return this.currentTheme.asObservable()
 	}
 
 	/**

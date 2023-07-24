@@ -23,15 +23,6 @@ export class AppComponent {
 			db.delete()
 			db.open()
 		}
-
-		this.currentTheme = this.themeService.getCurrentTheme()
-	}
-
-	/**
-	 * Executes tasks related to pressing the theme button
-	 */
-	public themeButtonToggle(): void {
-		this.currentTheme = this.themeService.changeTheme()
 	}
 
 	/**
@@ -49,6 +40,10 @@ export class AppComponent {
 		private route: Router,
 		private characterService: CharacterService,
 		private themeService: ThemeService
-	) { }
+	) {
+		this.themeService.getCurrentTheme().subscribe(theme => {
+			this.currentTheme = theme
+		})
+	}
 
 }

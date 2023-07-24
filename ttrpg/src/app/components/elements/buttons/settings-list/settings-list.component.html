@@ -1,0 +1,8 @@
+<button mat-icon-button class="default-margin-left" [matMenuTriggerFor]="menu" yPosition="above">
+	<mat-icon fontIcon="settings"></mat-icon>
+</button>
+<mat-menu class="menu" #menu="matMenu">
+	<button class="small-margin-bottom" mat-mini-fab (click)="themeButtonToggle()" color="primary">
+		<mat-icon [fontIcon]="(themeIcon | async) ?? 'light_mode'"></mat-icon>
+	</button>
+</mat-menu>
