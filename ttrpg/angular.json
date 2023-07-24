@@ -64,7 +64,19 @@
 									"with": "src/environments/environment.development.ts"
 								}
 							]
-						}
+						},
+            "tauri": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.tauri.ts"
+                },
+                {
+                  "replace": "src/environments/environment.development.ts",
+                  "with": "src/environments/environment.tauri.development.ts"
+                }
+              ]
+            }
 					},
 					"defaultConfiguration": "production"
 				},
@@ -76,7 +88,10 @@
 						},
 						"development": {
 							"browserTarget": "ttrpg:build:development"
-						}
+						},
+            "tauri": {
+              "browserTarget": "ttrpg:build:tauri"
+            }
 					},
 					"defaultConfiguration": "development"
 				},
@@ -110,5 +125,8 @@
 				}
 			}
 		}
-	}
+  },
+  "cli": {
+    "analytics": false
+  }
 }
