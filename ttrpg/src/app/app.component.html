@@ -1,5 +1,8 @@
 <mat-drawer-container class="full-height">
+	<app-cookie-banner></app-cookie-banner>
+
 	<router-outlet (activate)="routerOutletActivation()"></router-outlet>
+
 	<mat-toolbar class="align-bottom center-horizontally" color="primary">
 		<app-navigation-list class="align-left navigation-list" *ngIf="characterSelected | async"></app-navigation-list>
 		<section class="align-left" *ngIf="!(characterSelected | async)">

@@ -20,7 +20,9 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
 
+import { CookieBannerComponent } from './components/elements/banners/cookie-banner/cookie-banner.component';
 import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
 import { NavigationButtonsComponent } from './components/elements/buttons/navigation-buttons/navigation-buttons.component';
@@ -43,7 +45,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		DeleteCharacterButtonComponent,
 		CharacterListElementComponent,
 		NavigationButtonsComponent,
-		NavigationListComponent
+		NavigationListComponent,
+		CookieBannerComponent
 	],
 	imports: [
 		BrowserModule,
@@ -62,7 +65,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		MatIconModule,
 		MatToolbarModule,
 		MatButtonToggleModule,
-		MatMenuModule
+		MatMenuModule,
+		MatSnackBarModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]
