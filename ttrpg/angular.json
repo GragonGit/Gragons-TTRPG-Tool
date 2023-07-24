@@ -70,9 +70,13 @@
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.tauri.ts"
-                },
+                }
+              ]
+            },
+            "tauriDev": {
+              "fileReplacements": [
                 {
-                  "replace": "src/environments/environment.development.ts",
+                  "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.tauri.development.ts"
                 }
               ]
@@ -91,6 +95,9 @@
 						},
             "tauri": {
               "browserTarget": "ttrpg:build:tauri"
+            },
+            "tauriDev": {
+              "browserTarget": "ttrpg:build:tauriDev"
             }
 					},
 					"defaultConfiguration": "development"

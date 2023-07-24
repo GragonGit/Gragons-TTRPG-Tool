@@ -1,5 +1,5 @@
 <mat-drawer-container class="full-height">
-	<app-cookie-banner></app-cookie-banner>
+	<app-cookie-banner *ngIf="environment.webapp"></app-cookie-banner>
 
 	<router-outlet (activate)="routerOutletActivation()"></router-outlet>
 

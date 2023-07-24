@@ -23,7 +23,7 @@ export class AppComponent {
 			db.delete()
 			db.open()
 		}
-		
+
 		this.themeService.getCurrentTheme().subscribe(theme => {
 			this.currentTheme = theme
 		})
@@ -46,4 +46,5 @@ export class AppComponent {
 		private themeService: ThemeService
 	) { }
 
+  protected readonly environment = environment;
 }
