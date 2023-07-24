@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable as DexieObservable, PromiseExtended, liveQuery } from 'dexie';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { emptyCharacter } from 'src/app/resources/constants/Characters';
 import { db } from '../../database/db';
 import { Character } from '../../models/Character';
 
@@ -8,6 +9,7 @@ import { Character } from '../../models/Character';
 	providedIn: 'root'
 })
 export class CharacterService {
+	private character: BehaviorSubject<Character> = new BehaviorSubject(emptyCharacter)
 	private characterSelected: BehaviorSubject<boolean> = new BehaviorSubject(false)
 
 	/// [Database]
@@ -72,20 +74,39 @@ export class CharacterService {
 	/// [Getter and Setter]
 
 	/**
-	 * Sets the characterSelected value
+	 * Gets an observable of the character
 	 * 
-	 * @param selected 
+	 * @returns The character as an observable
+	*/
+	public getCharacter(): Observable<Character> {
+		return this.character.asObservable()
+	}
+
+	/**
+	 * Sets the character
+	 * 
+	 * @param character The new character
 	 */
-	public setCharacterSelected(selected: boolean): void {
-		this.characterSelected.next(selected)
+	public setCharacter(character: Character): void {
+		this.setCharacterSelected(!(character === emptyCharacter))
+		this.character.next(character)
 	}
 
 	/**
 	 * Gets an observable whether a character is selected
 	 * 
 	 * @returns The characterSelected field as an observable
-	 */
+	*/
 	public isCharacterSelected(): Observable<boolean> {
 		return this.characterSelected.asObservable()
+	}
+
+	/**
+	 * Sets the characterSelected value
+	 * 
+	 * @param selected Is character selected
+	*/
+	private setCharacterSelected(selected: boolean): void {
+		this.characterSelected.next(selected)
 	}
 }
