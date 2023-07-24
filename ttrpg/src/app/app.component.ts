@@ -36,7 +36,7 @@ export class AppComponent {
 	public routerOutletActivation() {
 		const url = this.route.url
 
-		if (url.includes('/home')) {
+		if (url.includes('/home') || url.includes('/about')) {
 			this.characterService.setCharacter(emptyCharacter)
 		}
 	}
