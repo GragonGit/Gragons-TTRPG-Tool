@@ -2,8 +2,8 @@
 	<mat-icon fontIcon="settings"></mat-icon>
 </button>
 <mat-menu class="menu" #menu="matMenu">
-	<button class="small-margin-bottom" mat-mini-fab value="profile" color="primary">
-		<mat-icon fontIcon="question_mark"></mat-icon>
+	<button class="small-margin-bottom" mat-mini-fab routerLink="about" color="primary">
+		<mat-icon class="material-icons-outlined" fontIcon="info"></mat-icon>
 	</button>
 	<button class="small-margin-bottom" mat-mini-fab (click)="themeButtonToggle()" color="primary">
 		<mat-icon [fontIcon]="(themeIcon | async) ?? 'light_mode'"></mat-icon>

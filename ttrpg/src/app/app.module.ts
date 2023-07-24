@@ -19,18 +19,19 @@ import { MatIconModule } from "@angular/material/icon";
 import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from "@angular/material/menu";
 import { MatSidenavModule } from "@angular/material/sidenav";
-import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { MatToolbarModule } from "@angular/material/toolbar";
 
 import { CookieBannerComponent } from './components/elements/banners/cookie-banner/cookie-banner.component';
 import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
 import { NavigationButtonsComponent } from './components/elements/buttons/navigation-buttons/navigation-buttons.component';
 import { NavigationListComponent } from './components/elements/buttons/navigation-list/navigation-list.component';
+import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
+import { AboutComponent } from './components/main/about/about.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
-import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 
 
 @NgModule({
@@ -48,7 +49,8 @@ import { SettingsListComponent } from './components/elements/buttons/settings-li
 		NavigationButtonsComponent,
 		NavigationListComponent,
 		CookieBannerComponent,
-		SettingsListComponent
+		SettingsListComponent,
+		AboutComponent
 	],
 	imports: [
 		BrowserModule,
