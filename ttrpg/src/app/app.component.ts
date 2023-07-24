@@ -23,6 +23,10 @@ export class AppComponent {
 			db.delete()
 			db.open()
 		}
+		
+		this.themeService.getCurrentTheme().subscribe(theme => {
+			this.currentTheme = theme
+		})
 	}
 
 	/**
@@ -40,10 +44,6 @@ export class AppComponent {
 		private route: Router,
 		private characterService: CharacterService,
 		private themeService: ThemeService
-	) {
-		this.themeService.getCurrentTheme().subscribe(theme => {
-			this.currentTheme = theme
-		})
-	}
+	) { }
 
 }
