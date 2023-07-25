@@ -15,22 +15,9 @@ export class ProfileComponent {
 	public character: Character = emptyCharacter
 
 	ngOnInit() {
-		this.setSelectedCharacter()
+		this.characterService.setSelectedCharacterWithId(Number(this.activatedRoute.snapshot.paramMap.get('id')))
 		this.characterService.getCharacter().subscribe(character => {
 			this.character = character
-		})
-	}
-
-	/**
-	 * Sets the selected character by reading the id out of the url
-	 */
-	private setSelectedCharacter(): void {
-		const id = Number(this.activatedRoute.snapshot.paramMap.get('id'))
-		this.characterService.getCharacterFromDbById(id).then((character) => {
-			if (character) {
-				this.characterService.setCharacter(character)
-				this.characterService.updateCharacterInDb(this.character, { lastOpened: new Date })
-			}
 		})
 	}
 

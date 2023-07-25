@@ -71,6 +71,20 @@ export class CharacterService {
 		if (character.id) { db.characters.delete(character.id) }
 	}
 
+	/**
+	 * Sets the currently selected character with the given id
+	 * 
+	 * @param id The id of the character
+	 */
+	public setSelectedCharacterWithId(id: number): void {
+		this.getCharacterFromDbById(id).then((character) => {
+			if (character) {
+				this.setCharacter(character)
+				this.updateCharacterInDb(character, { lastOpened: new Date })
+			}
+		})
+	}
+
 	/// [Getter and Setter]
 
 	/**
