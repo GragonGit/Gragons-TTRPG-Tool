@@ -47,4 +47,5 @@ export class AppComponent {
 		private themeService: ThemeService
 	) { }
 
+	protected readonly environment = environment;
 }

@@ -1,8 +1,8 @@
 {
   "$schema": "../node_modules/@tauri-apps/cli/schema.json",
   "build": {
-    "beforeBuildCommand": "ng build ttrpg",
-    "beforeDevCommand": "ng serve",
+    "beforeBuildCommand": "ng build ttrpg -c production,tauri",
+    "beforeDevCommand": "ng serve -c development,tauriDev",
     "devPath": "http://localhost:4200",
     "distDir": "../dist/ttrpg"
   },
