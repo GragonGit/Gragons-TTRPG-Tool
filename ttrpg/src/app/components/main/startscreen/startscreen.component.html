@@ -4,7 +4,7 @@
 	<mat-action-list class="characterSelectionList">
 		<div mat-subheader class="center-items-vertically space-between">
 			<h2>Deine Charaktere</h2>
-			<button class="newCharacterFab" mat-mini-fab color="primary" routerLink="../profile/0">
+			<button class="newCharacterFab" mat-mini-fab color="primary" (click)="createNewCharacter()">
 				<mat-icon fontIcon="add"></mat-icon>
 			</button>
 		</div>
@@ -13,7 +13,7 @@
 		<div class="listElements">
 			<app-character-list-element [character]="character"
 				*ngFor="let character of characters | async"></app-character-list-element>
-			<button mat-list-item routerLink="../profile/0">
+			<button mat-list-item (click)="createNewCharacter()">
 				<span class="center-items-vertically">
 					<mat-icon class="default-margin-right" fontIcon="add"></mat-icon>
 					Neuer Charakter
