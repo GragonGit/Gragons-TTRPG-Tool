@@ -76,6 +76,15 @@ body {
 		border-radius: 100%;
 	}
 
+	/// [Common-Theme-Styling/Input]
+
+	input,
+	input:focus {
+		background: none;
+		border: none;
+		outline: none;
+	}
+
 	/// [Common-Theme-Styling/Scrollbar]
 
 	::-webkit-scrollbar {
@@ -102,17 +111,37 @@ body {
 	.mat-button-toggle-checked {
 		background-color: mat.get-color-from-palette(mat.$grey-palette, 800);
 	}
+
+	/// [Common-Theme-Styling/Input]
+
+	input {
+		color: #fff;
+	}
+
+	::selection {
+		background: mat.get-color-from-palette(mat.$grey-palette, 600);
+	}
 }
 
 .lightMode {
 	/// [Light-Mode-Styling/Toggle Button]
 
 	.mat-button-toggle-appearance-standard {
-		color: white;
+		color: #fff;
 	}
 
 	.mat-button-toggle-checked.mat-button-toggle-appearance-standard {
 		background-color: mat.get-color-from-palette(mat.$grey-palette, 200);
 		color: mat.get-color-from-palette($ttrpg-primary, 500);
+	}
+
+	/// [Common-Theme-Styling/Input]
+
+	input {
+		color: mat.get-color-from-palette(mat.$grey-palette, 800);
+	}
+
+	::selection {
+		background: mat.get-color-from-palette(mat.$grey-palette, 300);
 	}
 }
