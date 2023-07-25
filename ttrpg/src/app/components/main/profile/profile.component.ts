@@ -16,6 +16,9 @@ export class ProfileComponent {
 
 	ngOnInit() {
 		this.setSelectedCharacter()
+		this.characterService.getCharacter().subscribe(character => {
+			this.character = character
+		})
 	}
 
 	/**
@@ -29,7 +32,6 @@ export class ProfileComponent {
 			} else {
 				this.setWithNewCharacter()
 			}
-			this.characterService.setCharacterSelected(true)
 		})
 	}
 
@@ -39,7 +41,7 @@ export class ProfileComponent {
 	 * @param character The existing character recieved from another source (e.g. the database)
 	 */
 	private setWithExistingCharacter(character: Character): void {
-		this.character = character
+		this.characterService.setCharacter(character)
 		this.characterService.updateCharacterInDb(this.character, { lastOpened: new Date })
 	}
 
@@ -48,7 +50,7 @@ export class ProfileComponent {
 	 * Creates a new character from newCharacter template
 	 */
 	private setWithNewCharacter(): void {
-		this.character = Object.assign({}, newCharacter)
+		this.characterService.setCharacter(Object.assign({}, newCharacter))
 		this.characterService.addCharacterToDb(this.character)
 			.then(() => this.characterService.updateCharacterInDb(this.character, { lastOpened: new Date }))
 	}

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { db } from "./database/db";
+import { emptyCharacter } from './resources/constants/Characters';
 import * as themes from './resources/constants/Themes';
 import { CharacterService } from './services/database/character.service';
 import { ThemeService } from './services/settings/theme.service';
@@ -35,8 +36,8 @@ export class AppComponent {
 	public routerOutletActivation() {
 		const url = this.route.url
 
-		if (url.includes('/home')) {
-			this.characterService.setCharacterSelected(false)
+		if (url.includes('/home') || url.includes('/about')) {
+			this.characterService.setCharacter(emptyCharacter)
 		}
 	}
 

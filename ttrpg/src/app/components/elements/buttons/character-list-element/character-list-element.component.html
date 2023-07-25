@@ -3,7 +3,7 @@
 	<span class="center-items-vertically space-between">
 		<span class="long-character-text">
 			{{character.name | truncate}}
-			<span *ngIf="character.lastOpened" class="less-important-text">
+			<span *ngIf="character.lastOpened" class="less-important-text last-opened">
 				Zuletzt geöffnet: {{character.lastOpened | ttrpgDateFormat}}
 			</span>
 		</span>
