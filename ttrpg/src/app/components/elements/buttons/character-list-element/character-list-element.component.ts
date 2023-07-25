@@ -1,6 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { Character } from 'src/app/models/Character';
 import { emptyCharacter } from 'src/app/resources/constants/Characters';
+import { CharacterService } from 'src/app/services/database/character.service';
 import { DeleteCharacterButtonComponent } from '../delete-character-button/delete-character-button.component';
 
 @Component({
@@ -15,4 +16,12 @@ export class CharacterListElementComponent {
 	onCharacterButtonLeave() {
 		this.deleteButton.confirmDeletion = false
 	}
+
+	onCharacterButtonToggle() {
+		this.characterService.updateCharacterInDb(this.character, { lastOpened: new Date })
+	}
+
+	constructor(
+		private characterService: CharacterService
+	) { }
 }

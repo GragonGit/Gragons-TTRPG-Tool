@@ -80,7 +80,6 @@ export class CharacterService {
 		this.getCharacterFromDbById(id).then((character) => {
 			if (character) {
 				this.setCharacter(character)
-				this.updateCharacterInDb(character, { lastOpened: new Date })
 			}
 		})
 	}
