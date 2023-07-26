@@ -29,6 +29,7 @@ import { NavigationButtonsComponent } from './components/elements/buttons/naviga
 import { NavigationListComponent } from './components/elements/buttons/navigation-list/navigation-list.component';
 import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
+import { ProfileDataComponent } from './components/elements/input/profile-data/profile-data.component';
 import { AboutComponent } from './components/main/about/about.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
@@ -50,7 +51,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		NavigationListComponent,
 		CookieBannerComponent,
 		SettingsListComponent,
-		AboutComponent
+		AboutComponent,
+		ProfileDataComponent
 	],
 	imports: [
 		BrowserModule,
