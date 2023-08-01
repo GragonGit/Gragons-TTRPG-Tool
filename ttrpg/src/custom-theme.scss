@@ -112,10 +112,12 @@ body {
 		background-color: mat.get-color-from-palette(mat.$grey-palette, 800);
 	}
 
-	/// [Common-Theme-Styling/Input]
+	/// [Dark-Mode-Styling/Input]
 
-	input {
+	input,
+	input:focus {
 		color: #fff;
+		border-bottom: 1px #fff solid;
 	}
 
 	::selection {
@@ -135,10 +137,12 @@ body {
 		color: mat.get-color-from-palette($ttrpg-primary, 500);
 	}
 
-	/// [Common-Theme-Styling/Input]
+	/// [Light-Mode-Styling/Input]
 
-	input {
+	input,
+	input:focus {
 		color: mat.get-color-from-palette(mat.$grey-palette, 800);
+		border-bottom: 1px mat.get-color-from-palette(mat.$grey-palette, 800) solid;
 	}
 
 	::selection {

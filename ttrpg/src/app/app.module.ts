@@ -33,6 +33,7 @@ import { ProfileDataComponent } from './components/elements/input/profile-data/p
 import { AboutComponent } from './components/main/about/about.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
+import { ProfileRoleComponent } from './components/elements/input/profile-role/profile-role.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { StartscreenComponent } from './components/main/startscreen/startscreen.
 		CookieBannerComponent,
 		SettingsListComponent,
 		AboutComponent,
-		ProfileDataComponent
+		ProfileDataComponent,
+  ProfileRoleComponent
 	],
 	imports: [
 		BrowserModule,
