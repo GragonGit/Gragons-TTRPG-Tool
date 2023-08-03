@@ -29,11 +29,11 @@ import { NavigationButtonsComponent } from './components/elements/buttons/naviga
 import { NavigationListComponent } from './components/elements/buttons/navigation-list/navigation-list.component';
 import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
-import { ProfileDataComponent } from './components/elements/input/profile-data/profile-data.component';
+import { ProfileDataComponent } from './components/sub-components/profile-data/profile-data.component';
 import { AboutComponent } from './components/main/about/about.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
-import { ProfileRoleComponent } from './components/elements/input/profile-role/profile-role.component';
+import { EditableStatComponent } from './components/elements/input/editable-stat/editable-stat.component';
 
 
 @NgModule({
@@ -54,7 +54,7 @@ import { ProfileRoleComponent } from './components/elements/input/profile-role/p
 		SettingsListComponent,
 		AboutComponent,
 		ProfileDataComponent,
-  ProfileRoleComponent
+  EditableStatComponent,
 	],
 	imports: [
 		BrowserModule,
