@@ -1,3 +1,10 @@
 .profile-list
-	flex-wrap: wrap
-	flex-direction: column
+	max-height: calc( 100vh - 10rem )
+	overflow: auto
+
+	display: grid
+	grid-template-columns: 1fr 1fr
+	justify-items: center
+
+	@media (max-width: 560px)
+		grid-template-columns: 1fr
