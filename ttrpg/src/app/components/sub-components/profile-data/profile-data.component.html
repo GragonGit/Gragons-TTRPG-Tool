@@ -1,2 +1,4 @@
-<app-editable-stat [stat]="character.name" [statName]="'Name1'"
+<app-editable-stat [stat]="character.name" [statName]="'Name'"
 	(valueChangeEvent)="onNameChange($event)"></app-editable-stat>
+<app-editable-stat [stat]="character.nickname" [statName]="'Spitzname'"
+	(valueChangeEvent)="onNicknameChange($event)"></app-editable-stat>

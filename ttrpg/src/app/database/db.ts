@@ -1,7 +1,8 @@
 import Dexie, { Table } from 'dexie';
+import { environment } from 'src/environments/environment';
 import { Character } from "../models/Character";
 import { Characters } from "../resources/constants/Characters";
-import { environment } from 'src/environments/environment';
+import * as characterColumns from "../resources/databaseColumns/characterColumn";
 
 export class AppDB extends Dexie {
 	public characters!: Table<Character, number>;
@@ -9,7 +10,7 @@ export class AppDB extends Dexie {
 	constructor() {
 		super('ngdexieliveQuery');
 		this.version(3).stores({
-			characters: '++id, name, lastOpened',
+			characters: characterColumns.allCharacterColumns,
 		});
 		this.on('populate', () => this.populate());
 	}

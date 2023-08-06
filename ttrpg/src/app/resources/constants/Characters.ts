@@ -1,11 +1,28 @@
 import { Character } from "../../models/Character";
 
-export const Characters: Character[] = [
-	{ name: 'Sylas', lastOpened: new Date() },
-	{ name: 'Zweilas', lastOpened: new Date(2023, 1, 24) },
-	{ name: 'Dreilas' }
-]
+export const emptyCharacter: Character = { name: '', nickname: '' }
 
-export const newCharacter: Character = { name: 'Neuer Charakter' }
+export const newCharacter: Character = createNewCharacter()
 
-export const emptyCharacter: Character = { name: '' }
+export const Characters: Character[] = createCharactersArray()
+
+
+
+function createNewCharacter(): Character {
+	const newCharacter = Object.assign({}, emptyCharacter)
+	newCharacter.name = 'Neuer Charakter'
+	return newCharacter
+}
+
+function createCharactersArray(): Character[] {
+	const firstCharacter = Object.assign({}, emptyCharacter)
+	firstCharacter.lastOpened = new Date()
+	firstCharacter.name = 'Sylas Thatcher'
+	firstCharacter.nickname = 'Sy'
+
+	const secondCharacter = Object.assign({}, emptyCharacter)
+	secondCharacter.lastOpened = new Date(2023, 1, 24)
+	secondCharacter.name = 'Zweilas'
+
+	return [firstCharacter, secondCharacter]
+}

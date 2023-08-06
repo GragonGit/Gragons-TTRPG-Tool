@@ -1,5 +1,6 @@
 export interface Character {
 	id?: number
-	name: string
 	lastOpened?: Date
+	name: string
+	nickname: string
 }
