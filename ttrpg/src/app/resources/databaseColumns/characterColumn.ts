@@ -1,8 +1,7 @@
-export const allCharacterColumns: string = concatAllColumns()
+export const allIndexedCharacterColumns: string = concatAllIndexedColumns()
 
-function concatAllColumns(): string {
+function concatAllIndexedColumns(): string {
 	return '++id'
 		+ ', lastOpened'
 		+ ', name'
-		+ ', nickname'
 }

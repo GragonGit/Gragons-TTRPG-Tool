@@ -3,4 +3,5 @@ export interface Character {
 	lastOpened?: Date
 	name: string
 	nickname: string
+	age: string
 }

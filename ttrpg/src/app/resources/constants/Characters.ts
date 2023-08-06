@@ -1,6 +1,10 @@
 import { Character } from "../../models/Character";
 
-export const emptyCharacter: Character = { name: '', nickname: '' }
+export const emptyCharacter: Character = {
+	name: '',
+	nickname: '',
+	age: ''
+}
 
 export const newCharacter: Character = createNewCharacter()
 
