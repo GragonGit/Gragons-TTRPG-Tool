@@ -3,7 +3,15 @@ import { Character } from "../../models/Character";
 export const emptyCharacter: Character = {
 	name: '',
 	nickname: '',
-	age: ''
+	gender: '',
+	race: '',
+	age: '',
+	height: '',
+	weight: '',
+	skinColor: '',
+	hairColor: '',
+	eyeColor: '',
+	origin: ''
 }
 
 export const newCharacter: Character = createNewCharacter()
@@ -19,10 +27,20 @@ function createNewCharacter(): Character {
 }
 
 function createCharactersArray(): Character[] {
-	const firstCharacter = Object.assign({}, emptyCharacter)
-	firstCharacter.lastOpened = new Date()
-	firstCharacter.name = 'Sylas Thatcher'
-	firstCharacter.nickname = 'Sy'
+	const firstCharacter = {
+		lastOpened: new Date(),
+		name: 'Sylas',
+		nickname: 'Sy',
+		gender: 'Männlich',
+		race: 'Mensch',
+		age: '40',
+		height: '1,70 m',
+		weight: '100 kg',
+		skinColor: 'hell',
+		hairColor: 'braun',
+		eyeColor: 'haselnuss',
+		origin: 'Demacia'
+	}
 
 	const secondCharacter = Object.assign({}, emptyCharacter)
 	secondCharacter.lastOpened = new Date(2023, 1, 24)

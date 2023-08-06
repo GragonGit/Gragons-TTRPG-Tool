@@ -1,6 +1,22 @@
 <app-editable-stat [stat]="character.name" [statName]="'Name'"
-	(valueChangeEvent)="onNameChange($event)"></app-editable-stat>
+	(valueChangeEvent)="onInputChange({ name: $event })"></app-editable-stat>
 <app-editable-stat [stat]="character.nickname" [statName]="'Spitzname'"
-	(valueChangeEvent)="onNicknameChange($event)"></app-editable-stat>
+	(valueChangeEvent)="onInputChange({ nickname: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.gender" [statName]="'Geschlecht'"
+	(valueChangeEvent)="onInputChange({ gender: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.race" [statName]="'Rasse'"
+	(valueChangeEvent)="onInputChange({ race: $event })"></app-editable-stat>
 <app-editable-stat [stat]="character.age" [statName]="'Alter'"
-	(valueChangeEvent)="onAgeChange($event)"></app-editable-stat>
+	(valueChangeEvent)="onInputChange({ age: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.height" [statName]="'Größe'"
+	(valueChangeEvent)="onInputChange({ height: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.weight" [statName]="'Gewicht'"
+	(valueChangeEvent)="onInputChange({ weight: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.skinColor" [statName]="'Hautfarbe'"
+	(valueChangeEvent)="onInputChange({ skinColor: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.hairColor" [statName]="'Haarfarbe'"
+	(valueChangeEvent)="onInputChange({ hairColor: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.eyeColor" [statName]="'Augenfarbe'"
+	(valueChangeEvent)="onInputChange({ eyeColor: $event })"></app-editable-stat>
+<app-editable-stat [stat]="character.origin" [statName]="'Herkunft'"
+	(valueChangeEvent)="onInputChange({ origin: $event })"></app-editable-stat>

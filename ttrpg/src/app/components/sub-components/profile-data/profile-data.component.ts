@@ -18,27 +18,13 @@ export class ProfileDataComponent {
 	}
 
 	/**
-	 * Executes tasks related to changing the character's name
+	 * Updates the character inside the database according to the submitted changes
 	 */
-	public onNameChange(newValue: string): void {
-		this.characterService.updateCharacterInDb(this.character, { name: newValue })
-	}
-
-	/**
-	 * Executes tasks related to changing the character's nick name
-	 */
-	public onNicknameChange(newValue: string): void {
-		this.characterService.updateCharacterInDb(this.character, { nickname: newValue })
-	}
-
-	/**
-	 * Executes tasks related to changing the character's age
-	 */
-	public onAgeChange(newValue: string): void {
-		this.characterService.updateCharacterInDb(this.character, { age: newValue })
+	public onInputChange(changes: any): void {
+		this.characterService.updateCharacterInDb(this.character, changes)
 	}
 
 	constructor(
-		private characterService: CharacterService
+		public characterService: CharacterService
 	) { }
 }
