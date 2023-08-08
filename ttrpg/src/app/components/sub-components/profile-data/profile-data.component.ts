@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Character } from 'src/app/models/Character';
+import { Stat } from 'src/app/models/Stat';
 import { emptyCharacter } from 'src/app/resources/constants/Characters';
 import { CharacterService } from 'src/app/services/database/character.service';
 
@@ -20,8 +21,9 @@ export class ProfileDataComponent {
 	/**
 	 * Updates the character inside the database according to the submitted changes
 	 */
-	public onInputChange(changes: any): void {
-		this.characterService.updateCharacterInDb(this.character, changes)
+	public onProfileStatChange(index: number, changedStat: Stat): void {
+		this.character.profileStats[index] = changedStat
+		this.characterService.updateCharacterInDb(this.character, { profileStats: this.character.profileStats })
 	}
 
 	constructor(
