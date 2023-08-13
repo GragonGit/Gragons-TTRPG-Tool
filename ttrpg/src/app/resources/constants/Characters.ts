@@ -2,44 +2,29 @@ import { Character } from "../../models/Character";
 import { profileStats } from "./Stats";
 
 export const emptyCharacter: Character = {
-	name: {
-		statName: 'Name',
-		value: ''
-	},
+	name: '',
 	profileStats: []
 }
 
-export const newCharacter: Character = createNewCharacter()
+export const newCharacter: Character = {
+	name: 'Neuer Charakter',
+	profileStats: []
+}
 
 export const Characters: Character[] = createCharactersArray()
 
 
 
-function createNewCharacter(): Character {
-	const newCharacter = Object.assign({}, emptyCharacter)
-	newCharacter.name = {
-		statName: 'Name',
-		value: 'Neuer Charakter'
-	}
-	return newCharacter
-}
-
 function createCharactersArray(): Character[] {
 	const firstCharacter: Character = {
 		lastOpened: new Date(),
-		name: {
-			statName: 'Name',
-			value: 'Sylas'
-		},
+		name: 'Sylas',
 		profileStats: Array.from(profileStats)
 	}
 
 	const secondCharacter = Object.assign({}, emptyCharacter)
 	secondCharacter.lastOpened = new Date(2023, 1, 24)
-	secondCharacter.name = {
-		statName: 'Name',
-		value: 'Zweilas'
-	}
+	secondCharacter.name = 'Zweilas'
 
 	return [firstCharacter, secondCharacter]
 }

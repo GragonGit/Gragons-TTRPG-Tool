@@ -1,8 +1,9 @@
 <div class="stat-item default-margin-vertical">
 	<span matListItemTitle>
-		<input class="profile-input-value" type="text" (change)="emitValueChange()" [(ngModel)]="stat.value">
+		<input class="profile-input-value" [type]="stat.isNumberStat ? 'number' : 'text'" (change)="emitValueChange()"
+			[(ngModel)]="stat.value">
 	</span>
 	<span matListItemLine>
-		<input class="profile-input-title" type="text" (change)="onStatNameChange()" [(ngModel)]="stat.statName">
+		<input class="profile-input-title" type="text" (change)="emitValueChange()" [(ngModel)]="stat.statName">
 	</span>
 </div>

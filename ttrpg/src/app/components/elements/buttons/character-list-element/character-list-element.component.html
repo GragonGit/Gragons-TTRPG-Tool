@@ -2,12 +2,12 @@
 	(mouseleave)="onCharacterButtonLeave()" routerLink="{{'../profile/' + character.id}}">
 	<span class="center-items-vertically space-between">
 		<span class="long-character-text">
-			{{character.name.value | truncate}}
+			{{character.name | truncate}}
 			<span *ngIf="character.lastOpened" class="less-important-text last-opened">
 				Zuletzt geöffnet: {{character.lastOpened | ttrpgDateFormat}}
 			</span>
 		</span>
-		<span class="short-character-text">{{character.name.value | truncate : 10}}</span>
+		<span class="short-character-text">{{character.name | truncate : 10}}</span>
 		<app-delete-character-button class="hidden-child" [character]="character"></app-delete-character-button>
 	</span>
 </button>

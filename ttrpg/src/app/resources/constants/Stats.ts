@@ -1,37 +1,32 @@
-import { NumberStat, Stat, StringStat } from "src/app/models/Stat"
+import { Stat } from "src/app/models/Stat"
 
-export const emptyStringStat: StringStat = {
+export const emptyStat: Stat = {
 	statName: '',
-	value: ''
+	value: '',
+	isNumberStat: false
 }
 
-export const emptyNumberStat: NumberStat = {
-	statName: '',
-	value: 0
-}
-
-export const newStringStat: StringStat = {
+export const newStat: Stat = {
 	statName: 'Neuer Stat',
-	value: ''
-}
-
-export const newNumberStat: NumberStat = {
-	statName: 'Neuer Stat',
-	value: 0
+	value: '',
+	isNumberStat: false
 }
 
 export const profileStats: Stat[] = createStatsArray()
 
 
+
 function createStatsArray(): Stat[] {
-	const firstStat: StringStat = {
+	const firstStat: Stat = {
 		statName: 'Rasse',
-		value: ''
+		value: '',
+		isNumberStat: false
 	}
 
-	const secondStat: NumberStat = {
+	const secondStat: Stat = {
 		statName: 'Alter',
-		value: 0
+		value: '20',
+		isNumberStat: true
 	}
 
 	return [firstStat, secondStat]

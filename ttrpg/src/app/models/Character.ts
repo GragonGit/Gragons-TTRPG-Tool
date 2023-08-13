@@ -1,8 +1,8 @@
-import { Stat, StringStat } from "./Stat"
+import { Stat } from "./Stat"
 
 export interface Character {
 	id?: number
 	lastOpened?: Date
-	name: StringStat
+	name: string
 	profileStats: Stat[]
 }
