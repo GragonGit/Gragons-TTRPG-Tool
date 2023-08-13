@@ -21,7 +21,7 @@ export class CharacterNameComponent {
 	 * Executes tasks related to changes in the name input
 	 */
 	public onNameInputChange(): void {
-		this.characterService.updateCharacterInDb(this.character, { name: this.character.name })
+		this.characterService.updateCharacterInDb(this.character, { fileName: this.character.fileName })
 	}
 
 	constructor(
