@@ -1,0 +1,8 @@
+<button class="mdc-icon-button--reduced-size" mat-icon-button *ngIf="!confirmDeletion"
+	(click)="onDeletionButtonsClick('delete')">
+	<mat-icon fontIcon="close"></mat-icon>
+</button>
+<button class="red-hover mdc-icon-button--reduced-size" mat-icon-button *ngIf="confirmDeletion"
+	(click)="onDeletionButtonsClick('confirm')">
+	<mat-icon fontIcon="delete"></mat-icon>
+</button>

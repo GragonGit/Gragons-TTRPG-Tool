@@ -25,15 +25,16 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { CookieBannerComponent } from './components/elements/banners/cookie-banner/cookie-banner.component';
 import { CharacterListElementComponent } from './components/elements/buttons/character-list-element/character-list-element.component';
 import { DeleteCharacterButtonComponent } from './components/elements/buttons/delete-character-button/delete-character-button.component';
+import { DeleteProfileStatButtonComponent } from './components/elements/buttons/delete-profile-stat-button/delete-profile-stat-button.component';
 import { NavigationButtonsComponent } from './components/elements/buttons/navigation-buttons/navigation-buttons.component';
 import { NavigationListComponent } from './components/elements/buttons/navigation-list/navigation-list.component';
 import { SettingsListComponent } from './components/elements/buttons/settings-list/settings-list.component';
 import { CharacterNameComponent } from './components/elements/input/character-name/character-name.component';
-import { ProfileDataComponent } from './components/sub-components/profile-data/profile-data.component';
+import { EditableStatComponent } from './components/elements/input/editable-stat/editable-stat.component';
 import { AboutComponent } from './components/main/about/about.component';
 import { ProfileComponent } from './components/main/profile/profile.component';
 import { StartscreenComponent } from './components/main/startscreen/startscreen.component';
-import { EditableStatComponent } from './components/elements/input/editable-stat/editable-stat.component';
+import { ProfileDataComponent } from './components/sub-components/profile-data/profile-data.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { EditableStatComponent } from './components/elements/input/editable-stat
 		SettingsListComponent,
 		AboutComponent,
 		ProfileDataComponent,
-  EditableStatComponent,
+		EditableStatComponent,
+		DeleteProfileStatButtonComponent,
 	],
 	imports: [
 		BrowserModule,

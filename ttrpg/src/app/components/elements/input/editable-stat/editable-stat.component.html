@@ -1,7 +1,8 @@
-<div class="stat-item default-margin-vertical">
+<div class="stat-item default-margin-vertical" (mouseleave)="onDeleteButtonLeave()">
 	<span matListItemTitle>
 		<input class="profile-input-value" [type]="stat.isNumberStat ? 'number' : 'text'" (change)="emitValueChange()"
 			[(ngModel)]="stat.value">
+		<app-delete-profile-stat-button (deleteStatEvent)="emitDeleteStatEvent()"></app-delete-profile-stat-button>
 	</span>
 	<span matListItemLine>
 		<input class="profile-input-title" type="text" (change)="emitValueChange()" [(ngModel)]="stat.statName">

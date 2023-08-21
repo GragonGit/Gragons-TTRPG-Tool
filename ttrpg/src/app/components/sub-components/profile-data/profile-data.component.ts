@@ -26,6 +26,21 @@ export class ProfileDataComponent {
 		this.characterService.updateCharacterInDb(this.character, { profileStats: this.character.profileStats })
 	}
 
+	/**
+	 * Deletes the profile stat of a character regarding to its indexed position inside the profile stat array
+	 * If there is now element at said index nothing happens
+	 * 
+	 * @param index The index of the stat that is deleted
+	 */
+	public deleteStat(index: number) {
+		const profileStats = this.character.profileStats
+		for (let i = index; i < profileStats.length - 1; i++) {
+			profileStats[i] = profileStats[i + 1]
+		}
+		profileStats.pop()
+		this.characterService.updateCharacterInDb(this.character, { profileStats: profileStats })
+	}
+
 	constructor(
 		public characterService: CharacterService
 	) { }
