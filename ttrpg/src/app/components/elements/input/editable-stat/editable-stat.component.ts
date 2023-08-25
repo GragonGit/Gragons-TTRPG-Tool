@@ -35,4 +35,13 @@ export class EditableStatComponent {
 		this.deleteStatEvent.emit()
 	}
 
+	/**
+	 * Changes the number of the input by the given amount via addition
+	 * 
+	 * @param amount The amount the number is changed
+	 */
+	onNumberChangeButton(amount: number): void {
+		this.stat.value = String(Number(this.stat.value) + amount)
+	}
+
 }
