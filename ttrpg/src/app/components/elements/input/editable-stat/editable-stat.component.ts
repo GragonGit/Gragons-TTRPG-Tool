@@ -42,6 +42,7 @@ export class EditableStatComponent {
 	 */
 	onNumberChangeButton(amount: number): void {
 		this.stat.value = String(Number(this.stat.value) + amount)
+		this.emitValueChange()
 	}
 
 }
