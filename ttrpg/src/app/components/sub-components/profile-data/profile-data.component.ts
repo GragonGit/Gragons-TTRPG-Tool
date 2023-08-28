@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Character } from 'src/app/models/Character';
 import { Stat } from 'src/app/models/Stat';
 import { emptyCharacter } from 'src/app/resources/constants/Characters';
+import { newStat } from 'src/app/resources/constants/Stats';
 import { CharacterService } from 'src/app/services/database/character.service';
 
 @Component({
@@ -39,6 +40,18 @@ export class ProfileDataComponent {
 		}
 		profileStats.pop()
 		this.characterService.updateCharacterInDb(this.character, { profileStats: profileStats })
+	}
+
+	/**
+	 * Adds a new stat to the profileStats array
+	 * 
+	 * @param isNumberStat True when the new stat is a number stat
+	 */
+	public addNewStat(isNumberStat: boolean) {
+		const stat = Object.assign({}, newStat)
+		stat.isNumberStat = isNumberStat
+		this.character.profileStats.push(stat)
+		this.characterService.updateCharacterInDb(this.character, { profileStats: this.character.profileStats })
 	}
 
 	constructor(
