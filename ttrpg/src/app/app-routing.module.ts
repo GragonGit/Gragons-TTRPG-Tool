@@ -7,15 +7,15 @@ const routes: Routes = [
     loadChildren: () =>
       import('./home/feature/home.module').then((m) => m.HomeModule),
   },
-	{
-		path: '**',
+  {
+    path: '**',
     redirectTo: 'home',
     pathMatch: 'full',
-	}
+  }
 ];
 
 @NgModule({
-	imports: [RouterModule.forRoot(routes)],
-	exports: [RouterModule]
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
 export class AppRoutingModule { }
