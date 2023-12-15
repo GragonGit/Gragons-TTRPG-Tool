@@ -4,7 +4,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 registerLocaleData(localeDe, 'de');
 
 @Pipe({
-  name: 'ttrpgDateFormat'
+  name: 'ttrpgDateFormat',
+  standalone: true
 })
 export class CustomDatePipe extends DatePipe implements PipeTransform {
   /**
