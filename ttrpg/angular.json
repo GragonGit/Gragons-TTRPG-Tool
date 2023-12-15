@@ -30,7 +30,6 @@
 							"src/assets"
 						],
 						"styles": [
-							"src/custom-theme.scss",
 							"src/styles.sass"
 						],
 						"scripts": []
@@ -88,16 +87,16 @@
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "ttrpg:build:production"
+							"buildTarget": "ttrpg:build:production"
 						},
 						"development": {
-							"browserTarget": "ttrpg:build:development"
+							"buildTarget": "ttrpg:build:development"
 						},
 						"tauri": {
-							"browserTarget": "ttrpg:build:tauri"
+							"buildTarget": "ttrpg:build:tauri"
 						},
 						"tauriDev": {
-							"browserTarget": "ttrpg:build:tauriDev"
+							"buildTarget": "ttrpg:build:tauriDev"
 						}
 					},
 					"defaultConfiguration": "development"
@@ -105,7 +104,7 @@
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
 					"options": {
-						"browserTarget": "ttrpg:build"
+						"buildTarget": "ttrpg:build"
 					}
 				},
 				"test": {
