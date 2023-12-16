@@ -19,6 +19,7 @@
 		"@angular/platform-browser": "^17.0.7",
 		"@angular/platform-browser-dynamic": "^17.0.7",
 		"@angular/router": "^17.0.7",
+		"@ngx-translate/core": "^15.0.0",
 		"@tauri-apps/api": "^1.5.2",
 		"dexie": "^3.2.4",
 		"rxjs": "~7.8.1",
