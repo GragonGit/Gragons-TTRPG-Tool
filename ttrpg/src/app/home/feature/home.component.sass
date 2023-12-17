@@ -9,3 +9,20 @@ $layout-breakpoint-small: 320px
 h1, h2
   overflow-wrap: break-word
   text-align: center
+
+.character-list
+  display: grid
+  gap: 1rem
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr))
+  justify-content: center
+  justify-items: center
+  list-style: none
+  margin: 1rem
+  padding-left: 0
+
+  @media (max-width: $layout-breakpoint-small)
+      grid-template-columns: 1fr
+      justify-items: stretch
+
+.mt-5
+  margin-top: 5rem

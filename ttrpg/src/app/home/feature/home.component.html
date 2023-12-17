@@ -1,2 +1,13 @@
 <h1>Wilkommen zum TTRPG</h1>
 <h2>Wähle deinen Charakter</h2>
+
+<ul class="character-list">
+  @for (character of characters; track $index) {
+    <!-- TODO Searchbar -->
+    <li>
+      <app-character-card />
+    </li>
+  } @empty {
+    <h1 class="mt-5">Es wurden keine Charaktere gefunden :C</h1>
+  }
+</ul>

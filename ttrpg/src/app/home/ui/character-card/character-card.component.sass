@@ -1,0 +1,27 @@
+$layout-breakpoint-small: 320px
+$background-color: #f3f3f3
+
+@media (max-width: $layout-breakpoint-small)
+  .smallHide
+    display: none
+  
+.character-card-wrapper
+  background-color: $background-color
+  border-radius: 1rem
+  max-width: 20rem
+  min-width: 15rem
+  padding: 0.5rem
+
+  &:hover
+    background-color: darken($background-color, 2%)
+
+  &:active
+    background-color: darken($background-color, 5%)
+  
+  @media (max-width: $layout-breakpoint-small)
+    max-width: none
+    min-width: 4rem
+    margin: 0.25rem 0.25rem
+
+p
+  margin: 0.5rem 0
