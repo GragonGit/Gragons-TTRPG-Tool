@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { IconComponent } from '@ui/icon/icon.component';
 
 @Component({
@@ -11,5 +11,9 @@ import { IconComponent } from '@ui/icon/icon.component';
   styleUrl: './new-character-card.component.sass'
 })
 export class NewCharacterCardComponent {
+  @Output() newCharacterEvent = new EventEmitter<void>()
 
+  addNewCharacter(): void {
+    this.newCharacterEvent.emit();
+  }
 }

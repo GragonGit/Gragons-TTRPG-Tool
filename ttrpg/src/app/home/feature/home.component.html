@@ -9,11 +9,11 @@
     </li>
   }
 
-  @if (!(characters | async) || ((characters | async)!.length <= 0)) {
+  @if (!(characters | async)) {
     <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
   } @else {
     <li>
-      <app-new-character-card class="character-card" />
+      <app-new-character-card class="character-card" (newCharacterEvent)="addNewCharacter()" />
     </li>
   }
 </ul>

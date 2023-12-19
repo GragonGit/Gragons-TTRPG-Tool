@@ -7,5 +7,10 @@ import { Observable, from } from 'rxjs';
   providedIn: 'root'
 })
 export class CharactersService {
-  charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return db.characters.toArray() }))
+  private readonly charactersTable = db.characters
+  charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return this.charactersTable.toArray() }))
+
+  addNewCharacter(): void {
+    this.charactersTable.add({ fileName: "New" })
+  }
 }
