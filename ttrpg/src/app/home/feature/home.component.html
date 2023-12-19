@@ -5,9 +5,15 @@
   @for (character of characters | async ; track character.id) {
     <!-- TODO Searchbar -->
     <li>
-      <app-character-card [character]="character"/>
+      <app-character-card class="character-card" [character]="character" />
     </li>
-  } @empty {
+  }
+
+  @if (!(characters | async) || ((characters | async)!.length <= 0)) {
     <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
+  } @else {
+    <li>
+      <app-new-character-card class="character-card" />
+    </li>
   }
 </ul>
