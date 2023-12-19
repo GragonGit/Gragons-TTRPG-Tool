@@ -4,7 +4,8 @@
     "noCharacterFound": "Keinen Charakter gefunden",
     "welcome": "Wilkommen zum TTRPG Sheet",
     "UI": {
-      "lastOpened": "Zuletzt geöffnet"
+      "lastOpened": "Zuletzt geöffnet",
+      "neverOpened": "Nie"
     }
   }
 }
