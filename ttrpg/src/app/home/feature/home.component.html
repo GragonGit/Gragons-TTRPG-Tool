@@ -2,7 +2,7 @@
 <h2>Wähle deinen Charakter</h2>
 
 <ul class="character-list">
-  @for (character of characters; track $index) {
+  @for (character of characters | async ; track character.id) {
     <!-- TODO Searchbar -->
     <li>
       <app-character-card />
