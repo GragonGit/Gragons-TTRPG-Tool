@@ -4,6 +4,7 @@ import { Character } from '@data-access/database';
 import { Observable } from 'rxjs';
 import { CharactersService } from '../data-access/characters.service';
 import { CharacterCardComponent } from '../ui/character-card/character-card.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import { CharacterCardComponent } from '../ui/character-card/character-card.comp
   imports: [
     CharacterCardComponent,
     
-    CommonModule
+    CommonModule,
+    TranslateModule
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.sass'

@@ -1,8 +1,8 @@
 <div class="character-card">
   <div class="character-data-button-wrapper">
     <div class="character-data-wrapper">
-      <p>{{character.fileName}}</p>
-      <p>Last opened: {{(character.lastOpened | date) ?? 'Never'}}</p>
+      <p>{{ character.fileName }}</p>
+      <p>{{ 'HOME.UI.lastOpened' | translate }}: {{ (character.lastOpened | date) ?? 'Never' }}</p>
     </div>
     <button type="button">
       <app-icon iconName="Settings" />

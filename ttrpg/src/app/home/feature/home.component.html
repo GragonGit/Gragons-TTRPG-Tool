@@ -1,5 +1,5 @@
-<h1>Wilkommen zum TTRPG</h1>
-<h2>Wähle deinen Charakter</h2>
+<h1>{{ 'HOME.welcome' | translate }}</h1>
+<h2>{{ 'HOME.chooseCharacter' | translate }}</h2>
 
 <ul class="character-list">
   @for (character of characters | async ; track character.id) {
@@ -8,6 +8,6 @@
       <app-character-card [character]="character"/>
     </li>
   } @empty {
-    <h1 class="mt-5">Es wurden keine Charaktere gefunden :C</h1>
+    <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
   }
 </ul>

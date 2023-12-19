@@ -1,6 +1,7 @@
 import { DatePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Character } from '@data-access/database';
+import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@ui/icon/icon.component';
 
 @Component({
@@ -8,7 +9,9 @@ import { IconComponent } from '@ui/icon/icon.component';
   standalone: true,
   imports: [
     IconComponent,
-    
+
+    TranslateModule,
+
     DatePipe
   ],
   templateUrl: './character-card.component.html',
