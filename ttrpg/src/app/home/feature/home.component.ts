@@ -10,6 +10,7 @@ import { CharacterCardComponent } from '../ui/character-card/character-card.comp
   standalone: true,
   imports: [
     CharacterCardComponent,
+    
     CommonModule
   ],
   templateUrl: './home.component.html',

@@ -5,7 +5,7 @@
   @for (character of characters | async ; track character.id) {
     <!-- TODO Searchbar -->
     <li>
-      <app-character-card />
+      <app-character-card [character]="character"/>
     </li>
   } @empty {
     <h1 class="mt-5">Es wurden keine Charaktere gefunden :C</h1>
