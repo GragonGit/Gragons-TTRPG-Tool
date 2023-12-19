@@ -30,6 +30,10 @@ export class AppDB extends Dexie {
         {
           fileName: 'Evelynn',
           lastOpened: new Date()
+        },
+        {
+          fileName: 'Morgana',
+          lastOpened: new Date()
         }
       ])
     }
