@@ -1,1 +1,26 @@
+$layout-breakpoint-small: 320px
 
+footer
+  align-items: center
+  background-color: darken(#fff, 5%)
+  border-radius: 10px 10px 0 0
+  display: flex
+  float: inline-end
+  height: 1rem
+  padding: 0 1rem
+  width: fit-content
+
+  a
+    color: #000
+    font-size: xx-small
+    margin: 0 0.25rem
+    text-decoration: none
+
+    &:hover
+      text-decoration: underline
+
+main
+  min-height: max( 100vh - 2.84rem , 100% - 1.8rem)
+
+  @media (max-width: $layout-breakpoint-small)
+    min-height: max( 100vh - 2.5rem , 100% - 1.5rem)
