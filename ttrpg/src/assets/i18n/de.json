@@ -1,5 +1,5 @@
 {
-  "Imprint": "Impressum",
+  "imprint": "Impressum",
   "HOME": {
     "chooseCharacter": "Wähle deinen Charakter",
     "noCharacterFound": "Keinen Charakter gefunden",
@@ -8,5 +8,11 @@
       "lastOpened": "Zuletzt geöffnet",
       "neverOpened": "Nie"
     }
+  },
+  "IMPRINT": {
+    "address": "Adresse",
+    "back": "Zurück",
+    "contact": "Kontakt",
+    "name": "Name"
   }
 }

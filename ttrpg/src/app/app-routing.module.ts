@@ -7,6 +7,10 @@ const routes: Routes = [
     loadComponent: () => import('./home/feature/home.component').then(c => c.HomeComponent)
   },
   {
+    path: 'imprint',
+    loadComponent: () => import('./imprint/feature/imprint.component').then(c => c.ImprintComponent)
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full',

@@ -1,5 +1,5 @@
 {
-  "Imprint": "Imprint",
+  "imprint": "Imprint",
   "HOME": {
     "chooseCharacter": "Choose your Character",
     "noCharacterFound": "No character was found",
@@ -8,5 +8,11 @@
       "lastOpened": "Last opened",
       "neverOpened": "Never"
     }
+  },
+  "IMPRINT": {
+    "address": "Address",
+    "back": "Go Back",
+    "contact": "Contact",
+    "name": "Name"
   }
 }
