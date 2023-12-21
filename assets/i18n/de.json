@@ -1,0 +1,18 @@
+{
+  "imprint": "Impressum",
+  "HOME": {
+    "chooseCharacter": "Wähle deinen Charakter",
+    "noCharacterFound": "Keinen Charakter gefunden",
+    "welcome": "Wilkommen zum TTRPG Sheet",
+    "UI": {
+      "lastOpened": "Zuletzt geöffnet",
+      "neverOpened": "Nie"
+    }
+  },
+  "IMPRINT": {
+    "address": "Adresse",
+    "back": "Zurück",
+    "contact": "Kontakt",
+    "name": "Name"
+  }
+}
