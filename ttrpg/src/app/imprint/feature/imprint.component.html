@@ -1,14 +1,13 @@
 <h1>{{ 'imprint' | translate }}</h1>
 <section>
   <h2>{{ 'IMPRINT.name' | translate }}</h2>
-  <p>Name</p>
+  <p>{{ imprintData.name }}</p>
   <h2>{{ 'IMPRINT.address' | translate }}</h2>
   <p>
-    Street NR<br>
-    PLZ City
+    {{ imprintData.adress }}
   </p>
   <h2>{{ 'IMPRINT.contact' | translate }}</h2>
-  <a href="mailto:">E-Mail</a>
+  <a href="mailto:{{ imprintData.email }}">{{ imprintData.email }}</a>
 </section>
 
 <div>
