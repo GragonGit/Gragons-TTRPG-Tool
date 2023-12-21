@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@ui/icon/icon.component';
 import { ImprintContentService } from '../data-access/imprint-content.service';
@@ -11,6 +12,7 @@ import { ImprintContentService } from '../data-access/imprint-content.service';
     IconComponent,
 
     CommonModule,
+    RouterModule,
     TranslateModule
   ],
   templateUrl: './imprint.component.html',

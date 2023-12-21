@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 import { db } from '@data-access/database';
 import { TranslateModule } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./app.component.sass'],
   standalone: true,
   imports: [
+    RouterModule,
     TranslateModule,
 
     RouterOutlet
