@@ -1,4 +1,4 @@
-# TTRPG
+# Gragons TTRPG Tool
 
 Tool for TTRPGs made by Gragon and TanConan
 
