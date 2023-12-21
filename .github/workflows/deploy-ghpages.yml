@@ -29,4 +29,5 @@ jobs:
         run: |
           cd ./ttrpg
           npm install
-          npm run ng deploy
+          npm run ng deploy --base-href=https://gragongit.github.io/Gragons-TTRPG-Tool/
+          # TODO make href repo flexible
