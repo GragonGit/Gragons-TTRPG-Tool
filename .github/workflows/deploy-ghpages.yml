@@ -27,5 +27,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          cd ./ttrpg
           npm install
           # npm run ng -- deploy --name="Deploy Workflow" --email=see.github@repo.com
