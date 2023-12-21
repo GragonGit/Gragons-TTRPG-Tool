@@ -1,0 +1,31 @@
+name: Build and Deploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Create data file
+        run: |
+          echo '{"name": "Super cool name"}' > src/assets/personalData.json
+      - name: Prepare and deploy
+        env:
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        run: |
+          npm install
+          npm run lint
+          npm run ng -- deploy --name="Deploy Workflow" --email=see.github@repo.com
