@@ -13,16 +13,16 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+        
+      - name: Create data file
+        run: |
+          echo '{"name": "Super cool name"}' > ttrpg/src/assets/personalData.json
+          
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '14'
 
-      - name: Create data file
-        run: |
-          echo ls -R -d >> $GITHUB_OUTPUT
-          echo '{"name": "Super cool name"}' > src/assets/personalData.json
       - name: Prepare and deploy
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
