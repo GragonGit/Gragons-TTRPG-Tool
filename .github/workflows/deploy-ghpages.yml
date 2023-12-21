@@ -21,7 +21,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '14'
+          node-version: '18'
 
       - name: Prepare and deploy
         env:
@@ -29,4 +29,4 @@ jobs:
         run: |
           cd ./ttrpg
           npm install
-          npm run ng -- deploy --name="Deploy Workflow" --email=see.github@repo.com
+          npm run ng deploy
