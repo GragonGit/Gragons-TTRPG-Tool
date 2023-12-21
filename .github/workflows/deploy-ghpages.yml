@@ -21,6 +21,7 @@ jobs:
 
       - name: Create data file
         run: |
+          ls -R -d
           echo '{"name": "Super cool name"}' > src/assets/personalData.json
       - name: Prepare and deploy
         env:
