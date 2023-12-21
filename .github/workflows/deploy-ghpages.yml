@@ -25,7 +25,7 @@ jobs:
 
       - name: Prepare and deploy
         env:
-          PERSONAL_TOKEN: ${{ secrets.GH_TOKEN }}
+          PERSONAL_TOKEN: "test"
         run: |
           cd ./ttrpg
           npm install
