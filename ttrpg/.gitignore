@@ -42,4 +42,4 @@ testem.log
 Thumbs.db
 
 # TTRPG files
-personalData.json
+personalData.ts

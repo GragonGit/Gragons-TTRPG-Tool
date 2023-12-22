@@ -16,7 +16,7 @@ jobs:
         
       - name: Create data file
         run: |
-          echo '{"name": "Super cool name"}' > ttrpg/src/assets/personalData.json
+          echo 'export const imprintData = {"name": "Super cool name"}' > ttrpg\src\app\imprint\data-access\personalData.ts
 
       - name: Set up Node.js
         uses: actions/setup-node@v3

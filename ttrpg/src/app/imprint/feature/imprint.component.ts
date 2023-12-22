@@ -19,13 +19,7 @@ import { ImprintContentService } from '../data-access/imprint-content.service';
   styleUrl: './imprint.component.sass'
 })
 export class ImprintComponent {
-  imprintData: { name: string, adress: string, email: string } = { name: "", adress: "", email: "" }
-
-  ngOnInit() {
-    this.imprintService.imprintDataObservable.subscribe((result) => {
-      this.imprintData = result;
-    })
-  }
+  imprintData = this.imprintService.imprintData
 
   constructor(private imprintService: ImprintContentService) { }
 }
