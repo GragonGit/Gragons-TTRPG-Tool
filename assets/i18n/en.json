@@ -6,7 +6,8 @@
     "welcome": "Welcome to the TTRPG Sheet",
     "UI": {
       "lastOpened": "Last opened",
-      "neverOpened": "Never"
+      "neverOpened": "Never",
+      "deletionConfirmation": "Are you sure?"
     }
   },
   "IMPRINT": {
