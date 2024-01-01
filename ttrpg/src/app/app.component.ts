@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { db } from '@data-access/database';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -17,6 +17,8 @@ import { environment } from 'src/environments/environment';
   ]
 })
 export class AppComponent {
+  protected readonly environment = environment
+
   ngOnInit(): void {
     if (!environment.production) {
       db.delete()
@@ -24,5 +26,10 @@ export class AppComponent {
     }
   }
 
-  protected readonly environment = environment;
+  setTranslateDefaultLang(lang: string): void {
+    this.translateService.use(lang)
+  }
+
+  constructor(private translateService: TranslateService) { }
+
 }

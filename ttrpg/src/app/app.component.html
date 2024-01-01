@@ -2,5 +2,7 @@
   <router-outlet />
 </main>
 <footer>
+  <button type="button" (click)="setTranslateDefaultLang('en')">EN</button>
+  <button type="button" (click)="setTranslateDefaultLang('de')">DE</button>
   <a routerLink="/imprint">{{ 'imprint' | translate }}</a>
 </footer>
