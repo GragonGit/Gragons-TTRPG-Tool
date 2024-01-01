@@ -1,0 +1,22 @@
+$layout-breakpoint-small: 320px
+
+button
+  align-items: center
+  background: none
+  border: none
+  display: flex
+  justify-content: center
+  width: 2.5rem
+
+  &:hover
+    fill: lighten(#000, 40%)
+
+div
+  display: flex
+  flex-wrap: wrap
+
+  @media (max-width: $layout-breakpoint-small)
+    justify-content: center
+
+p
+  margin: 0

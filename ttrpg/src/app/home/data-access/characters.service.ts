@@ -13,4 +13,14 @@ export class CharactersService {
   addNewCharacter(): void {
     this.charactersTable.add({ fileName: "New" })
   }
+
+  deleteCharacter(character: Character): void {
+    if (character.id) {
+      this.charactersTable.delete(character.id)
+    }
+  }
+
+  updateCharacter(key: Character, changes: { [keyPath: string]: any }): void {
+    this.charactersTable.update(key, changes)
+  }
 }

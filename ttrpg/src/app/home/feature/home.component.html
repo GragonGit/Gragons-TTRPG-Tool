@@ -1,19 +1,21 @@
 <h1>{{ 'HOME.welcome' | translate }}</h1>
 <h2>{{ 'HOME.chooseCharacter' | translate }}</h2>
 
+<!-- TODO Searchbar -->
 <ul class="character-list">
   @for (character of characters | async ; track character.id) {
-    <!-- TODO Searchbar -->
-    <li>
-      <app-character-card class="character-card" [character]="character" />
-    </li>
+  <li>
+    <app-character-card class="character-card" [character]="character"
+      (fileNameChangeEvent)="handleFileNameChange(character, $event)"
+      (deleteCharacterEvent)="handleDeleteCharacter(character)" />
+  </li>
   }
 
   @if (!(characters | async)) {
-    <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
+  <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
   } @else {
-    <li>
-      <app-new-character-card class="character-card" (newCharacterEvent)="addNewCharacter()" />
-    </li>
+  <li>
+    <app-new-character-card class="character-card" (newCharacterEvent)="addNewCharacter()" />
+  </li>
   }
 </ul>

@@ -1,13 +1,21 @@
 <div class="character-card">
   <div class="character-data-button-wrapper">
-    <div class="character-data-wrapper">
+    <div class="character-data-wrapper" [ngClass]="{'pointerEffects': !inSettings}">
+      @if (!inSettings) {
       <p>{{ character.fileName }}</p>
       <p>
         {{ 'HOME.UI.lastOpened' | translate }}:
         {{ (character.lastOpened | date) ?? 'HOME.UI.neverOpened' | translate }}
       </p>
+      } @else {
+      <div class="settingsWrapper">
+        <input #fileNameInput type="text" [placeholder]="character.fileName" [value]="character.fileName"
+          (keyup)="handleFileNameChange(fileNameInput.value)">
+        <app-delete-button (deleteCharacterEvent)="handleDeleteButton()" />
+      </div>
+      }
     </div>
-    <button type="button">
+    <button type="button" class="settingsButton" (click)="handleSettingsButton()">
       <app-icon iconName="Settings" />
     </button>
   </div>
