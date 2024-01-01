@@ -24,10 +24,12 @@ export class AppComponent {
       db.delete()
       db.open()
     }
+    this.setTranslateLang(localStorage.getItem('lang') ?? 'en')
   }
 
-  setTranslateDefaultLang(lang: string): void {
+  setTranslateLang(lang: string): void {
     this.translateService.use(lang)
+    localStorage.setItem('lang', lang)
   }
 
   constructor(private translateService: TranslateService) { }
