@@ -9,7 +9,7 @@
       </p>
       } @else {
       <div class="settingsWrapper">
-        <input #fileNameInput type="text" [placeholder]="character.fileName" [value]="character.fileName"
+        <input #fileNameInput type="text" [value]="character.fileName"
           (keyup)="handleFileNameChange(fileNameInput.value)">
         <app-delete-button (deleteCharacterEvent)="handleDeleteButton()" />
       </div>
