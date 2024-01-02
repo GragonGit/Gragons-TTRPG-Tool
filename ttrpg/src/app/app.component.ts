@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { db } from '@data-access/database';
+import { localStorageKeys } from '@data-access/localStorage';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 
@@ -24,12 +25,12 @@ export class AppComponent {
       db.delete()
       db.open()
     }
-    this.setTranslateLang(localStorage.getItem('lang') ?? 'en')
+    this.setTranslateLang(localStorage.getItem(localStorageKeys.lang) ?? 'en')
   }
 
   setTranslateLang(lang: string): void {
     this.translateService.use(lang)
-    localStorage.setItem('lang', lang)
+    localStorage.setItem(localStorageKeys.lang, lang)
   }
 
   constructor(private translateService: TranslateService) { }
