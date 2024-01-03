@@ -9,8 +9,7 @@
       </p>
       } @else {
       <div class="settingsWrapper">
-        <input #fileNameInput type="text" [value]="character.fileName"
-          (keyup)="handleFileNameChange(fileNameInput.value)">
+        <input type="text" [(ngModel)]="characterFileName" [placeholder]="placeholder">
         <app-delete-button (deleteCharacterEvent)="handleDeleteButton()" />
       </div>
       }
