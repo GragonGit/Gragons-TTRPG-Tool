@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Character, db } from '@data-access/database';
+import { TranslateService } from '@ngx-translate/core';
 import { liveQuery } from 'dexie';
 import { Observable, from } from 'rxjs';
 
@@ -11,7 +12,9 @@ export class CharactersService {
   charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return this.charactersTable.toArray() }))
 
   addNewCharacter(): void {
-    this.charactersTable.add({ fileName: "New" })
+    this.translateService.get('HOME.DA.newCharacter').subscribe((newCharacter: string) => {
+      this.charactersTable.add({ fileName: newCharacter ?? 'New Character' })
+    }).unsubscribe()
   }
 
   deleteCharacter(character: Character): void {
@@ -23,4 +26,6 @@ export class CharactersService {
   updateCharacter(key: Character, changes: { [keyPath: string]: any }): void {
     this.charactersTable.update(key, changes)
   }
+
+  constructor(private translateService: TranslateService) { }
 }
