@@ -4,6 +4,9 @@
     "chooseCharacter": "Choose your Character",
     "noCharacterFound": "No character was found",
     "welcome": "Welcome to the TTRPG Sheet",
+    "DA": {
+      "newCharacter": "New Character"
+    },
     "UI": {
       "lastOpened": "Last opened",
       "neverOpened": "Never",
