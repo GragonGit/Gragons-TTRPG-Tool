@@ -1,13 +1,18 @@
 $layout-breakpoint-small: 320px
-$background-color: #f3f3f3
 
 input
-  border: 1px solid darken($background-color, 8%)
+  background-color: var(--background-color-1)
+  border: 1px solid var(--background-color-7)
   border-radius: 0.3rem
+  color: var(--text-color-1)
   font-size: small
   margin: 0.5rem 0
   outline: none
   width: 100%
+
+:host-context(body.dark)
+  input
+    background-color: var(--background-color-5)
 
 p
   margin: 0.5rem 0
@@ -19,8 +24,8 @@ app-icon
     width: 1.5rem
 
 .character-card
-  background-color: $background-color
-  border: 1px solid darken($background-color, 8%)
+  background-color: var(--background-color-2)
+  border: 1px solid var(--background-color-5)
   border-radius: 1rem
   max-width: 23rem
   min-height: 6.2rem
@@ -51,24 +56,24 @@ app-icon
 
 .pointerEffects
   &:hover
-    background-color: darken($background-color, 2%)
+    background-color: var(--background-color-3)
 
   &:active
-    background-color: darken($background-color, 5%)
+    background-color: var(--background-color-4)
 
 .settingsButton
   align-items: center
-  background-color: darken($background-color, 8%)
+  background-color: var(--background-color-5)
   border: none
   display: flex
   justify-content: center
   width: 2.5rem
 
   &:hover
-    background-color: darken($background-color, 10%)
+    background-color: var(--background-color-6)
 
   &:active
-    background-color: darken($background-color, 13%)
+    background-color: var(--background-color-7)
 
   @media (max-width: $layout-breakpoint-small)
     width: 100%

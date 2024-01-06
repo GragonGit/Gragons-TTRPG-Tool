@@ -1,10 +1,9 @@
 $layout-breakpoint-small: 320px
-$background-color: #f3f3f3
 
 button
   align-items: center
-  background-color: darken($background-color, 8%)
-  border: 1px solid darken($background-color, 8%)
+  background-color: var(--background-color-5)
+  border: 1px solid var(--background-color-5)
   border-radius: 1rem
   display: flex
   justify-content: center
@@ -18,10 +17,10 @@ button
     min-width: 2rem
 
   &:hover
-    background-color: darken($background-color, 10%)
+    background-color: var(--background-color-6)
 
   &:active
-    background-color: darken($background-color, 13%)
+    background-color: var(--background-color-7)
 
   @media (max-width: $layout-breakpoint-small)
     width: 100%
