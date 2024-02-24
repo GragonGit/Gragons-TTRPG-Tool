@@ -22,6 +22,8 @@ const DEFAULT_LANG: string = 'en'
 export class AppComponent {
   protected readonly environment = environment
 
+  constructor(private translateService: TranslateService) { }
+
   ngOnInit(): void {
     if (!environment.production) {
       db.delete()
@@ -34,7 +36,4 @@ export class AppComponent {
     this.translateService.use(lang)
     localStorage.setItem(LOCAL_STORAGE_KEYS.LANG, lang)
   }
-
-  constructor(private translateService: TranslateService) { }
-
 }

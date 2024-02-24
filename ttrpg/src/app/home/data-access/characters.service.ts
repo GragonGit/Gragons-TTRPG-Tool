@@ -11,6 +11,8 @@ export class CharactersService {
   private readonly charactersTable = db.characters
   charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return this.charactersTable.toArray() }))
 
+  constructor(private translateService: TranslateService) { }
+
   addNewCharacter(): void {
     this.translateService.get('HOME.DA.newCharacter').subscribe((newCharacter: string) => {
       this.charactersTable.add({ fileName: newCharacter ?? 'New Character' })
@@ -26,6 +28,4 @@ export class CharactersService {
   updateCharacter(key: Character, changes: { [keyPath: string]: any }): void {
     this.charactersTable.update(key, changes)
   }
-
-  constructor(private translateService: TranslateService) { }
 }

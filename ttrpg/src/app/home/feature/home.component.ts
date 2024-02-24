@@ -23,6 +23,8 @@ import { NewCharacterCardComponent } from '../ui/new-character-card/new-characte
 export class HomeComponent {
   characters: Observable<Character[]> = this.characterService.charactersObservable
 
+  constructor(private characterService: CharactersService) { }
+
   addNewCharacter(): void {
     this.characterService.addNewCharacter()
   }
@@ -34,6 +36,4 @@ export class HomeComponent {
   handleFileNameChange(character: Character, fileName: string): void {
     this.characterService.updateCharacter(character, { "fileName": fileName })
   }
-
-  constructor(private characterService: CharactersService) { }
 }
