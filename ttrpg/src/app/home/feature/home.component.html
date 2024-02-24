@@ -3,19 +3,16 @@
 
 <!-- TODO Searchbar -->
 <ul class="character-list">
-  @for (character of characters | async ; track character.id) {
+  @for (character of characters(); track character.id) {
   <li>
     <ttrpg-character-card class="character-card" [character]="character"
       (ttrpgFileNameChange)="onFileNameChange(character, $event)"
       (ttrpgDeleteCharacter)="onDeleteCharacter(character)" />
   </li>
-  }
-
-  @if (!(characters | async)) {
+  } @empty {
   <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
-  } @else {
+  }
   <li>
     <ttrpg-new-character-card class="character-card" (ttrpgNewCharacter)="addNewCharacter()" />
   </li>
-  }
 </ul>

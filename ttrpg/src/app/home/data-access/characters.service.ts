@@ -1,15 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Character, db } from '@data-access/database';
 import { TranslateService } from '@ngx-translate/core';
 import { liveQuery } from 'dexie';
-import { Observable, from } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharactersService {
   private readonly charactersTable = db.characters
-  charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return this.charactersTable.toArray() }))
+  readonly characters: Signal<Character[] | undefined> = toSignal(liveQuery(() => { return this.charactersTable.toArray() }))
 
   constructor(private translateService: TranslateService) { }
 

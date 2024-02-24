@@ -1,8 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Signal } from '@angular/core';
 import { Character } from '@data-access/database';
 import { TranslateModule } from '@ngx-translate/core';
-import { Observable } from 'rxjs';
 import { CharactersService } from '../data-access/characters.service';
 import { CharacterCardComponent } from '../ui/character-card/character-card.component';
 import { NewCharacterCardComponent } from '../ui/new-character-card/new-character-card.component';
@@ -21,7 +20,7 @@ import { NewCharacterCardComponent } from '../ui/new-character-card/new-characte
   styleUrl: './home.component.sass'
 })
 export class HomeComponent {
-  characters: Observable<Character[]> = this.characterService.charactersObservable
+  characters: Signal<Character[] | undefined> = this.characterService.characters
 
   constructor(private characterService: CharactersService) { }
 
