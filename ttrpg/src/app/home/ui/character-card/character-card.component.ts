@@ -7,7 +7,7 @@ import { IconComponent } from '@ui/icon/icon.component';
 import { DeleteButtonComponent } from "../delete-button/delete-button.component";
 
 @Component({
-  selector: 'app-character-card',
+  selector: 'ttrpg-character-card',
   standalone: true,
   imports: [
     DeleteButtonComponent,

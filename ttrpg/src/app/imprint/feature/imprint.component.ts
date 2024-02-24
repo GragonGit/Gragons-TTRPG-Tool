@@ -6,7 +6,7 @@ import { IconComponent } from '@ui/icon/icon.component';
 import { ImprintContentService } from '../data-access/imprint-content.service';
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'ttrpg-imprint',
   standalone: true,
   imports: [
     IconComponent,

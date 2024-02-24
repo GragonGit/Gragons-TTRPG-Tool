@@ -2,7 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { IconComponent } from '@ui/icon/icon.component';
 
 @Component({
-  selector: 'app-new-character-card',
+  selector: 'ttrpg-new-character-card',
   standalone: true,
   imports: [
     IconComponent

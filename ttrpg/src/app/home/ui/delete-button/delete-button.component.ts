@@ -3,7 +3,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { IconComponent } from '@ui/icon/icon.component';
 
 @Component({
-  selector: 'app-delete-button',
+  selector: 'ttrpg-delete-button',
   standalone: true,
   imports: [
     IconComponent,

@@ -8,7 +8,7 @@ import { CharacterCardComponent } from '../ui/character-card/character-card.comp
 import { NewCharacterCardComponent } from '../ui/new-character-card/new-character-card.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'ttrpg-home',
   standalone: true,
   imports: [
     CharacterCardComponent,

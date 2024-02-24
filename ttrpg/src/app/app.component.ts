@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
 const DEFAULT_LANG: string = 'en'
 
 @Component({
-  selector: 'app-root',
+  selector: 'ttrpg-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass'],
   standalone: true,

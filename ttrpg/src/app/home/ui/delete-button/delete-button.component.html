@@ -1,14 +1,14 @@
 @if (!isPressed) {
 <button type="button" (click)="onDeleteButtonClick()">
-  <app-icon iconName="Delete" />
+  <ttrpg-icon iconName="Delete" />
 </button>
 } @else {
 <div>
   <button type="button" (click)="confirmDeletion()">
-    <app-icon iconName="CheckMark" />
+    <ttrpg-icon iconName="CheckMark" />
   </button>
   <button type="button" (click)="declineDeletion()">
-    <app-icon iconName="Cross" />
+    <ttrpg-icon iconName="Cross" />
   </button>
   <p>{{ "HOME.UI.deletionConfirmation" | translate }}</p>
 </div>
