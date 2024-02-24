@@ -3,11 +3,13 @@ import { Component, Signal } from '@angular/core';
 import { Character } from '@data-access/database';
 import { TranslateModule } from '@ngx-translate/core';
 import { CharactersService } from '../data-access/characters.service';
+import { CharacterCardComponent } from '../ui/character-card/character-card.component';
 
 @Component({
   selector: 'ttrpg-home',
   standalone: true,
   imports: [
+    CharacterCardComponent,
 
     CommonModule,
     TranslateModule
