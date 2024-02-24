@@ -1,14 +1,12 @@
-<h1>{{ 'HOME.welcome' | translate }}</h1>
-<h2>{{ 'HOME.chooseCharacter' | translate }}</h2>
+<h1>{{ "HOME.welcome" | translate }}</h1>
+<h2>{{ "HOME.chooseCharacter" | translate }}</h2>
 
 <!-- TODO Searchbar -->
 <ul class="character-list">
   @for (character of characters(); track character.id) {
-  <li>
-  </li>
+  <li></li>
   } @empty {
-  <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
+  <h1 class="mt-5">{{ "HOME.noCharacterFound" | translate }}</h1>
   }
-  <li>
-  </li>
+  <li></li>
 </ul>
