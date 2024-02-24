@@ -24,8 +24,8 @@ import { DeleteButtonComponent } from "../delete-button/delete-button.component"
 })
 export class CharacterCardComponent {
   @Input() character!: Character;
-  @Output() fileNameChangeEvent = new EventEmitter<string>()
-  @Output() deleteCharacterEvent = new EventEmitter<void>()
+  @Output() ttrpgFileNameChange = new EventEmitter<string>()
+  @Output() ttrpgDeleteCharacter = new EventEmitter<void>()
 
   inSettings = false
   placeholder = ''
@@ -36,11 +36,11 @@ export class CharacterCardComponent {
     this.characterFileName = this.character.fileName
   }
 
-  handleDeleteButton(): void {
-    this.deleteCharacterEvent.emit()
+  onDeleteCharacter(): void {
+    this.ttrpgDeleteCharacter.emit()
   }
 
-  handleSettingsButton(): void {
+  onSettingsButtonClick(): void {
     if (this.inSettings) {
       this.handleSettingsExit()
     }
@@ -51,6 +51,6 @@ export class CharacterCardComponent {
     if (!this.characterFileName) {
       this.characterFileName = this.placeholder
     }
-    this.fileNameChangeEvent.emit(this.characterFileName)
+    this.ttrpgFileNameChange.emit(this.characterFileName)
   }
 }

@@ -6,8 +6,8 @@
   @for (character of characters | async ; track character.id) {
   <li>
     <app-character-card class="character-card" [character]="character"
-      (fileNameChangeEvent)="handleFileNameChange(character, $event)"
-      (deleteCharacterEvent)="handleDeleteCharacter(character)" />
+      (ttrpgFileNameChange)="onFileNameChange(character, $event)"
+      (ttrpgDeleteCharacter)="onDeleteCharacter(character)" />
   </li>
   }
 
@@ -15,7 +15,7 @@
   <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
   } @else {
   <li>
-    <app-new-character-card class="character-card" (newCharacterEvent)="addNewCharacter()" />
+    <app-new-character-card class="character-card" (ttrpgNewCharacter)="addNewCharacter()" />
   </li>
   }
 </ul>

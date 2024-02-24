@@ -11,9 +11,9 @@ import { IconComponent } from '@ui/icon/icon.component';
   styleUrl: './new-character-card.component.sass'
 })
 export class NewCharacterCardComponent {
-  @Output() newCharacterEvent = new EventEmitter<void>()
+  @Output() ttrpgNewCharacter = new EventEmitter<void>()
 
   addNewCharacter(): void {
-    this.newCharacterEvent.emit();
+    this.ttrpgNewCharacter.emit();
   }
 }

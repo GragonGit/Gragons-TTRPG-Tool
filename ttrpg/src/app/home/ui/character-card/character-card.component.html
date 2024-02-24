@@ -10,11 +10,11 @@
       } @else {
       <div class="settingsWrapper">
         <input type="text" [(ngModel)]="characterFileName" [placeholder]="placeholder">
-        <app-delete-button (deleteCharacterEvent)="handleDeleteButton()" />
+        <app-delete-button (ttrpgDeleteCharacter)="onDeleteCharacter()" />
       </div>
       }
     </div>
-    <button type="button" class="settingsButton" (click)="handleSettingsButton()">
+    <button type="button" class="settingsButton" (click)="onSettingsButtonClick()">
       <app-icon iconName="Settings" />
     </button>
   </div>

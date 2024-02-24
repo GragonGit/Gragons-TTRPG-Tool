@@ -29,11 +29,11 @@ export class HomeComponent {
     this.characterService.addNewCharacter()
   }
 
-  handleDeleteCharacter(character: Character): void {
+  onDeleteCharacter(character: Character): void {
     this.characterService.deleteCharacter(character)
   }
 
-  handleFileNameChange(character: Character, fileName: string): void {
+  onFileNameChange(character: Character, fileName: string): void {
     this.characterService.updateCharacter(character, { "fileName": fileName })
   }
 }

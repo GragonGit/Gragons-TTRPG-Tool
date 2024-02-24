@@ -14,16 +14,16 @@ import { IconComponent } from '@ui/icon/icon.component';
   styleUrl: './delete-button.component.sass'
 })
 export class DeleteButtonComponent {
-  @Output() deleteCharacterEvent = new EventEmitter<void>()
+  @Output() ttrpgDeleteCharacter = new EventEmitter<void>()
 
   isPressed = false
 
-  handleDeleteButton(): void {
+  onDeleteButtonClick(): void {
     this.isPressed = true
   }
 
   confirmDeletion(): void {
-    this.deleteCharacterEvent.emit()
+    this.ttrpgDeleteCharacter.emit()
   }
 
   declineDeletion() {
