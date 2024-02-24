@@ -5,5 +5,5 @@ import { imprintData } from "./personalData";
   providedIn: 'root'
 })
 export class ImprintContentService {
-  imprintData = imprintData
+  readonly imprintData = imprintData
 }

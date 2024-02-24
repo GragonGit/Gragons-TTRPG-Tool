@@ -11,7 +11,6 @@ import { ImprintContentService } from '../data-access/imprint-content.service';
   imports: [
     IconComponent,
 
-    CommonModule,
     RouterModule,
     TranslateModule
   ],
@@ -19,7 +18,7 @@ import { ImprintContentService } from '../data-access/imprint-content.service';
   styleUrl: './imprint.component.sass'
 })
 export class ImprintComponent {
-  imprintData = this.imprintService.imprintData
+  readonly imprintData = this.imprintService.imprintData
 
   constructor(private imprintService: ImprintContentService) { }
 }

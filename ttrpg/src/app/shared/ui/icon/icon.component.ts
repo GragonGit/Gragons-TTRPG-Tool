@@ -8,5 +8,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './icon.component.sass'
 })
 export class IconComponent {
-  @Input() iconName: string = ''
+  @Input({ required: true }) iconName: string = ''
 }
