@@ -14,9 +14,8 @@ export class CharactersService {
   constructor(private translateService: TranslateService) { }
 
   addNewCharacter(): void {
-    this.translateService.get('HOME.DATA_ACCESS.newCharacter').subscribe((newCharacter: string) => {
-      this.charactersTable.add({ fileName: newCharacter ?? 'New Character' })
-    }).unsubscribe()
+    const newCharacterName = toSignal<string>(this.translateService.get('HOME.DATA_ACCESS.newCharacter'))
+    this.charactersTable.add({ fileName: newCharacterName() ?? 'New Character' })
   }
 
   deleteCharacter(character: Character): void {
