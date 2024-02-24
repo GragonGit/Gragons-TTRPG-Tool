@@ -14,7 +14,7 @@ export class CharactersService {
   constructor(private translateService: TranslateService) { }
 
   addNewCharacter(): void {
-    this.translateService.get('HOME.DA.newCharacter').subscribe((newCharacter: string) => {
+    this.translateService.get('HOME.DATA_ACCESS.newCharacter').subscribe((newCharacter: string) => {
       this.charactersTable.add({ fileName: newCharacter ?? 'New Character' })
     }).unsubscribe()
   }

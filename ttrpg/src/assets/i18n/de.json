@@ -4,13 +4,10 @@
     "chooseCharacter": "Wähle deinen Charakter",
     "noCharacterFound": "Keinen Charakter gefunden",
     "welcome": "Wilkommen zum TTRPG Sheet",
-    "DA": {
+    "DATA_ACCESS": {
       "newCharacter": "Neuer Charakter"
     },
     "UI": {
-      "lastOpened": "Zuletzt geöffnet",
-      "neverOpened": "Nie",
-      "deletionConfirmation": "Bist du sicher?"
     }
   },
   "IMPRINT": {
