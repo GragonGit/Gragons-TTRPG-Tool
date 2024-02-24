@@ -4,12 +4,14 @@ import { Character } from '@data-access/database';
 import { TranslateModule } from '@ngx-translate/core';
 import { CharactersService } from '../data-access/characters.service';
 import { CharacterCardComponent } from '../ui/character-card/character-card.component';
+import { NewCharacterButtonComponent } from '../ui/new-character-button/new-character-button.component';
 
 @Component({
   selector: 'ttrpg-home',
   standalone: true,
   imports: [
     CharacterCardComponent,
+    NewCharacterButtonComponent,
 
     CommonModule,
     TranslateModule
