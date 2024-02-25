@@ -1,6 +1,7 @@
 import { Injectable, Signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
-import { Character, db } from '@data-access/database';
+import { Character } from '@data-access/character';
+import { db } from '@data-access/database';
 import { TranslateService } from '@ngx-translate/core';
 import { liveQuery } from 'dexie';
 
@@ -24,7 +25,7 @@ export class CharactersService {
     }
   }
 
-  updateCharacter(key: Character, changes: { [keyPath: string]: any }): void {
+  updateCharacter(key: Character, changes: Partial<Character>): void {
     this.charactersTable.update(key, changes)
   }
 }

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Character } from '@data-access/database';
+import { Character } from '@data-access/character';
 
 @Component({
   selector: 'ttrpg-character-card',

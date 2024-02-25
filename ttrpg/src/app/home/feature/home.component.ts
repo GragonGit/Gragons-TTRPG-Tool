@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Signal } from '@angular/core';
-import { Character } from '@data-access/database';
+import { Character } from '@data-access/character';
 import { TranslateModule } from '@ngx-translate/core';
 import { CharactersService } from '../data-access/characters.service';
 import { CharacterCardComponent } from '../ui/character-card/character-card.component';
