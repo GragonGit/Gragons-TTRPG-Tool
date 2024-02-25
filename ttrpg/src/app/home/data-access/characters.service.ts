@@ -4,6 +4,7 @@ import { Character } from '@data-access/character';
 import { db } from '@data-access/database';
 import { TranslateService } from '@ngx-translate/core';
 import { liveQuery } from 'dexie';
+import { first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,9 @@ export class CharactersService {
   constructor(private translateService: TranslateService) { }
 
   addNewCharacter(): void {
-    const newCharacterName = toSignal<string>(this.translateService.get('HOME.DATA_ACCESS.newCharacter'))
-    this.charactersTable.add({ fileName: newCharacterName() ?? 'New Character' })
+    this.translateService.get('HOME.DATA_ACCESS.newCharacter')
+      .pipe(first())
+      .subscribe((newCharacterName) => this.charactersTable.add({ fileName: newCharacterName }))
   }
 
   deleteCharacter(character: Character): void {
