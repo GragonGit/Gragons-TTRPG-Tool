@@ -1,6 +1,9 @@
 <h1>{{ "HOME.welcome" | translate }}</h1>
 <h2>{{ "HOME.chooseCharacter" | translate }}</h2>
-<ttrpg-icon-button iconName="Add" (ttrpgClick)="addNewCharacter()" />
+<div class="actionButtonList">
+  <ttrpg-icon-button iconName="Add" (ttrpgClick)="addNewCharacter()" />
+  <ttrpg-icon-button iconName="Import" />
+</div>
 
 <!-- TODO Searchbar -->
 <ul class="character-list">
