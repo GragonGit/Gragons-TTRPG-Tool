@@ -1,0 +1,30 @@
+button
+  position: relative
+  background-color: var(--color-surface-container)
+  fill: var(--color-on-surface)
+  border: none
+  border-radius: 30%
+  aspect-ratio: 1
+  overflow: hidden
+  box-shadow: 0 2px 10px -5px var(--color-shadow)
+
+  &:hover .overlay
+    opacity: .4
+    background-color: var(--color-surface-container-highest)
+
+  &:active .overlay
+    background-color: var(--color-surface-container)
+
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+
+ttrpg-icon
+  position: relative
+  z-index: 1

@@ -2,16 +2,16 @@ import { CommonModule } from '@angular/common';
 import { Component, Signal } from '@angular/core';
 import { Character } from '@data-access/character';
 import { TranslateModule } from '@ngx-translate/core';
+import { IconButtonComponent } from '@ui/icon-button/icon-button.component';
 import { CharactersService } from '../data-access/characters.service';
 import { CharacterCardComponent } from '../ui/character-card/character-card.component';
-import { NewCharacterButtonComponent } from '../ui/new-character-button/new-character-button.component';
 
 @Component({
   selector: 'ttrpg-home',
   standalone: true,
   imports: [
     CharacterCardComponent,
-    NewCharacterButtonComponent,
+    IconButtonComponent,
 
     CommonModule,
     TranslateModule
