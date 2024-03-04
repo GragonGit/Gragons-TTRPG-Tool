@@ -1,0 +1,18 @@
+<div class="menuContainer">
+  <ttrpg-icon-button [iconName]="menuIcon" (ttrpgClick)="onMenuButtonClick()" />
+
+  @if (isOpen) {
+    @for (item of menuItems; track $index) {
+      <button type="button" class="menuItem">
+        @if (item.iconName) {
+          <ttrpg-icon [iconName]="item.iconName" />
+        }
+        <span>{{ item.text }}</span>
+        <div class="overlay"></div>
+      </button>
+    }
+  }
+</div>
+@if (isOpen) {
+  <button type="button" class="outsideMenu" (click)="isOpen = false"></button>
+}
