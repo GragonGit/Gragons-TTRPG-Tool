@@ -4,15 +4,18 @@ import { db } from '@data-access/database';
 import { LOCAL_STORAGE_KEYS } from '@data-access/localStorage';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
+import { SettingsMenuComponent } from './settings/feature/settings-menu.component';
 
 const DEFAULT_LANG: string = 'en'
 
 @Component({
   selector: 'ttrpg-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.sass'],
+  styleUrl: './app.component.sass',
   standalone: true,
   imports: [
+    SettingsMenuComponent,
+
     RouterModule,
     TranslateModule,
 

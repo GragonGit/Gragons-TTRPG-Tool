@@ -1,0 +1,35 @@
+button
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: var(--color-surface-container)
+  fill: var(--color-on-surface)
+  border: none
+  border-radius: .5rem
+  overflow: hidden
+  box-shadow: 0 2px 10px -5px var(--color-shadow)
+  outline: none
+
+  &:hover .overlay
+    opacity: .4
+    background-color: var(--color-surface-container-highest)
+
+  &:active .overlay
+    background-color: var(--color-surface-container)
+
+  & > :not(.overlay)
+    z-index: 1
+  
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0
+
+ttrpg-icon
+  height: 1.5rem

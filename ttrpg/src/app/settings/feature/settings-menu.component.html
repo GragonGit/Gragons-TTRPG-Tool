@@ -1,0 +1,11 @@
+<div class="menuContainer">
+  <ttrpg-icon-button iconName="Settings" (ttrpgClick)="onMenuButtonClick()" />
+
+  @if (isOpen) {
+  <ttrpg-settings-item iconName="Add" text="Home" />
+  <ttrpg-settings-item iconName="Add" text="Imprint" />
+  }
+</div>
+@if (isOpen) {
+<button type="button" class="outsideMenu" (click)="isOpen = false"></button>
+}
