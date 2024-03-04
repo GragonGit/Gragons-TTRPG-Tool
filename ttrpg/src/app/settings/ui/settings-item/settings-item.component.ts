@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { IconComponent } from '@ui/icon/icon.component';
 
 @Component({
@@ -13,4 +13,10 @@ import { IconComponent } from '@ui/icon/icon.component';
 export class SettingsItemComponent {
   @Input({ required: true }) iconName: string = ''
   @Input({ required: true }) text: string = ''
+
+  @Output() ttrpgClick = new EventEmitter<void>()
+
+  onClick(): void {
+    this.ttrpgClick.emit()
+  }
 }

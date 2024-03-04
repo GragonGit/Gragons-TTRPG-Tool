@@ -2,8 +2,16 @@
   <ttrpg-icon-button iconName="Settings" (ttrpgClick)="onMenuButtonClick()" />
 
   @if (isOpen) {
-  <ttrpg-settings-item iconName="Add" text="Home" />
-  <ttrpg-settings-item iconName="Add" text="Imprint" />
+  <ttrpg-settings-item
+    iconName="Add"
+    text="Home"
+    (ttrpgClick)="navigateToHome()"
+  />
+  <ttrpg-settings-item
+    iconName="Add"
+    text="Imprint"
+    (ttrpgClick)="navigateToImprint()"
+  />
   }
 </div>
 @if (isOpen) {
