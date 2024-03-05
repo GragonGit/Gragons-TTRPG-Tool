@@ -1,5 +1,4 @@
 {
-  "imprint": "Imprint",
   "HOME": {
     "chooseCharacter": "Choose your Character",
     "noCharacterFound": "No character was found",
@@ -14,5 +13,9 @@
     "back": "Go Back",
     "contact": "Contact",
     "name": "Name"
+  },
+  "SETTINGS": {
+    "home": "Home",
+    "imprint": "Imprint"
   }
 }

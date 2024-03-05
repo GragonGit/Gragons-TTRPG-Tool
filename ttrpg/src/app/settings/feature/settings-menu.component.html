@@ -4,12 +4,12 @@
   @if (isOpen) {
   <ttrpg-settings-item
     iconName="Add"
-    text="Home"
+    [text]="'SETTINGS.home' | translate"
     (ttrpgClick)="navigateToHome()"
   />
   <ttrpg-settings-item
     iconName="Add"
-    text="Imprint"
+    [text]="'SETTINGS.imprint' | translate"
     (ttrpgClick)="navigateToImprint()"
   />
   }

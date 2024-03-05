@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 import { IconButtonComponent } from '@ui/icon-button/icon-button.component';
 import { SettingsItemComponent } from '../ui/settings-item/settings-item.component';
 
@@ -8,7 +9,9 @@ import { SettingsItemComponent } from '../ui/settings-item/settings-item.compone
   standalone: true,
   imports: [
     IconButtonComponent,
-    SettingsItemComponent
+    SettingsItemComponent,
+
+    TranslateModule
   ],
   templateUrl: './settings-menu.component.html',
   styleUrl: './settings-menu.component.sass'
