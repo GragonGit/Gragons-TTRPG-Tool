@@ -1,8 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateModule } from '@ngx-translate/core';
+import { LOCAL_STORAGE_KEYS } from '@data-access/localStorage';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IconButtonComponent } from '@ui/icon-button/icon-button.component';
 import { SettingsItemComponent } from '../ui/settings-item/settings-item.component';
+import { SettingsLanguageComponent } from '../ui/settings-language/settings-language.component';
 
 @Component({
   selector: 'ttrpg-settings-menu',
@@ -10,6 +12,7 @@ import { SettingsItemComponent } from '../ui/settings-item/settings-item.compone
   imports: [
     IconButtonComponent,
     SettingsItemComponent,
+    SettingsLanguageComponent,
 
     TranslateModule
   ],
@@ -18,6 +21,7 @@ import { SettingsItemComponent } from '../ui/settings-item/settings-item.compone
 })
 export class SettingsMenuComponent {
   private router = inject(Router)
+  private translateService = inject(TranslateService)
   isOpen: boolean = false
 
   onMenuButtonClick(): void {
@@ -32,6 +36,11 @@ export class SettingsMenuComponent {
   navigateToImprint(): void {
     this.closeSettings()
     this.router.navigate(['imprint'])
+  }
+
+  setTranslateLang(lang: string): void {
+    this.translateService.use(lang)
+    localStorage.setItem(LOCAL_STORAGE_KEYS.LANG, lang)
   }
 
   private closeSettings(): void {

@@ -16,6 +16,13 @@
   },
   "SETTINGS": {
     "home": "Home",
-    "imprint": "Impressum"
+    "imprint": "Impressum",
+    "UI": {
+      "LANGUAGE": {
+        "language": "Sprache",
+        "en": "Englisch",
+        "de": "Deutsch"
+      }
+    }
   }
 }

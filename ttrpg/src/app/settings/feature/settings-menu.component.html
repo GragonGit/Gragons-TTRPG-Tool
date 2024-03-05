@@ -7,6 +7,7 @@
     [text]="'SETTINGS.home' | translate"
     (ttrpgClick)="navigateToHome()"
   />
+  <ttrpg-settings-language (ttrpgLanguageChange)="setTranslateLang($event)" />
   <ttrpg-settings-item
     iconName="Add"
     [text]="'SETTINGS.imprint' | translate"
