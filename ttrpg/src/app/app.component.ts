@@ -1,12 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { db } from '@data-access/database';
 import { LOCAL_STORAGE_KEYS } from '@data-access/localStorage';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { environment } from 'src/environments/environment';
 import { SettingsMenuComponent } from './settings/feature/settings-menu.component';
-
-const DEFAULT_LANG: string = 'en'
 
 @Component({
   selector: 'ttrpg-root',
@@ -24,15 +22,14 @@ const DEFAULT_LANG: string = 'en'
 })
 export class AppComponent {
   protected readonly environment = environment
-
-  constructor(private translateService: TranslateService) { }
+  private translateService = inject(TranslateService)
 
   ngOnInit(): void {
     if (!environment.production) {
       db.delete()
       db.open()
     }
-    this.setTranslateLang(localStorage.getItem(LOCAL_STORAGE_KEYS.LANG) ?? DEFAULT_LANG)
+    this.setTranslateLang(localStorage.getItem(LOCAL_STORAGE_KEYS.LANG) ?? this.translateService.getDefaultLang())
   }
 
   setTranslateLang(lang: string): void {
