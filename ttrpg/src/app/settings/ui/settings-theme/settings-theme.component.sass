@@ -1,0 +1,49 @@
+section
+  display: flex
+  flex-direction: column
+  align-items: center
+
+h3
+  font-size: smaller
+  font-weight: normal
+  margin: .2rem 0
+
+label
+  position: relative
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  background-color: inherit
+  font-size: smaller
+  padding: 0.2rem 0.2rem
+  border: solid 0 var(--color-outline-variant)
+  border-top-width: 1px
+  border-bottom-width: 0
+  width: 100%
+
+  &:hover .overlay
+    opacity: .4
+    background-color: var(--color-surface-container-highest)
+
+  &:active .overlay
+    background-color: var(--color-surface-container)
+
+  & > :not(.overlay)
+    z-index: 1
+
+input
+  appearance: none
+
+  &:checked ~ .overlay
+    opacity: 1
+    background-color: var(--color-surface-container-highest)
+
+.overlay
+  position: absolute
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  height: 100%
+  width: 100%
+  opacity: 0

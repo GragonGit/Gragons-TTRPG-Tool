@@ -5,6 +5,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { IconButtonComponent } from '@ui/icon-button/icon-button.component';
 import { SettingsItemComponent } from '../ui/settings-item/settings-item.component';
 import { SettingsLanguageComponent } from '../ui/settings-language/settings-language.component';
+import { SettingsThemeComponent } from '../ui/settings-theme/settings-theme.component';
 
 @Component({
   selector: 'ttrpg-settings-menu',
@@ -13,6 +14,7 @@ import { SettingsLanguageComponent } from '../ui/settings-language/settings-lang
     IconButtonComponent,
     SettingsItemComponent,
     SettingsLanguageComponent,
+    SettingsThemeComponent,
 
     TranslateModule
   ],

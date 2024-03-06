@@ -22,6 +22,9 @@
         "language": "Sprache",
         "en": "Englisch",
         "de": "Deutsch"
+      },
+      "THEME": {
+        "theme": "Thema"
       }
     }
   }

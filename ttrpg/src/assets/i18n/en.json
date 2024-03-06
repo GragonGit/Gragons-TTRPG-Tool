@@ -22,6 +22,9 @@
         "language": "Language",
         "en": "English",
         "de": "German"
+      },
+      "THEME": {
+        "theme": "Theme"
       }
     }
   }
