@@ -1,15 +1,17 @@
 <section>
   <h3>{{ "SETTINGS.UI.THEME.theme" | translate }}</h3>
-  @for (theme of themes; track $index) {
-  <label>
-    <input
-      type="radio"
-      name="theme"
-      [checked]="theme === selectedTheme"
-      (click)="onThemeSelection(theme)"
-    />
-    <span>{{ theme }}</span>
-    <div class="overlay"></div>
-  </label>
-  }
+  <div class="themeContainer">
+    @for (theme of themes; track $index) {
+    <label [class]="theme">
+      <input
+        type="radio"
+        name="theme"
+        [checked]="theme === selectedTheme"
+        (click)="onThemeSelection(theme)"
+      />
+      <div class="themeCircleBorder"></div>
+      <div class="themeCircleSecondaryColor"></div>
+    </label>
+    }
+  </div>
 </section>
