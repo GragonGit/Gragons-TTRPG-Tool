@@ -1,20 +1,24 @@
-import { Injectable } from '@angular/core';
-import { Character, db } from '@data-access/database';
+import { Injectable, Signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { Character } from '@data-access/character';
+import { db } from '@data-access/database';
 import { TranslateService } from '@ngx-translate/core';
 import { liveQuery } from 'dexie';
-import { Observable, from } from 'rxjs';
+import { first } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharactersService {
   private readonly charactersTable = db.characters
-  charactersObservable: Observable<Character[]> = from(liveQuery<Character[]>(() => { return this.charactersTable.toArray() }))
+  readonly characters: Signal<Character[] | undefined> = toSignal(liveQuery(() => { return this.charactersTable.toArray() }))
+
+  constructor(private translateService: TranslateService) { }
 
   addNewCharacter(): void {
-    this.translateService.get('HOME.DA.newCharacter').subscribe((newCharacter: string) => {
-      this.charactersTable.add({ fileName: newCharacter ?? 'New Character' })
-    }).unsubscribe()
+    this.translateService.get('HOME.DATA_ACCESS.newCharacter')
+      .pipe(first())
+      .subscribe((newCharacterName) => this.charactersTable.add({ fileName: newCharacterName }))
   }
 
   deleteCharacter(character: Character): void {
@@ -23,9 +27,7 @@ export class CharactersService {
     }
   }
 
-  updateCharacter(key: Character, changes: { [keyPath: string]: any }): void {
+  updateCharacter(key: Character, changes: Partial<Character>): void {
     this.charactersTable.update(key, changes)
   }
-
-  constructor(private translateService: TranslateService) { }
 }

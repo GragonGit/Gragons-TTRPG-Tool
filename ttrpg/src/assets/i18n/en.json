@@ -1,22 +1,31 @@
 {
-  "imprint": "Imprint",
   "HOME": {
     "chooseCharacter": "Choose your Character",
     "noCharacterFound": "No character was found",
     "welcome": "Welcome to the TTRPG Sheet",
-    "DA": {
+    "DATA_ACCESS": {
       "newCharacter": "New Character"
     },
-    "UI": {
-      "lastOpened": "Last opened",
-      "neverOpened": "Never",
-      "deletionConfirmation": "Are you sure?"
-    }
+    "UI": {}
   },
   "IMPRINT": {
     "address": "Address",
     "back": "Go Back",
     "contact": "Contact",
     "name": "Name"
+  },
+  "SETTINGS": {
+    "home": "Home",
+    "imprint": "Imprint",
+    "UI": {
+      "LANGUAGE": {
+        "language": "Language",
+        "en": "English",
+        "de": "German"
+      },
+      "THEME": {
+        "theme": "Theme"
+      }
+    }
   }
 }

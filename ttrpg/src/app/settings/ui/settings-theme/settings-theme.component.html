@@ -1,0 +1,17 @@
+<section>
+  <h3>{{ "SETTINGS.UI.THEME.theme" | translate }}</h3>
+  <div class="themeContainer">
+    @for (theme of themes; track $index) {
+    <label [class]="theme">
+      <input
+        type="radio"
+        name="theme"
+        [checked]="theme === selectedTheme"
+        (click)="onThemeSelection(theme)"
+      />
+      <div class="themeCircleBorder"></div>
+      <div class="themeCircleSecondaryColor"></div>
+    </label>
+    }
+  </div>
+</section>

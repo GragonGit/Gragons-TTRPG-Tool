@@ -1,0 +1,56 @@
+section
+  display: flex
+  flex-direction: column
+  align-items: center
+
+h3
+  font-size: smaller
+  font-weight: normal
+  margin: .2rem 0
+
+.themeContainer
+  display: flex
+  flex-direction: row
+  border: solid 0 var(--color-outline-variant)
+  border-top-width: 1px
+
+label
+  position: relative
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  background-color: var(--color-background)
+  font-size: smaller
+  height: 1rem
+  aspect-ratio: 1
+  margin: 0.5rem
+  border-radius: 100%
+  border: solid 2px var(--color-outline)
+
+  &:hover .themeCircleBorder
+    visibility: visible
+
+input
+  position: fixed
+  left: -99999px
+  appearance: none
+
+  &:checked ~ .themeCircleBorder
+    visibility: visible
+    border-color: var(--color-on-background)
+
+label div
+  position: absolute
+  aspect-ratio: 1
+  border-radius: 100%
+
+.themeCircleBorder
+  visibility: hidden
+  height: calc( 1rem + 8px )
+  transform: translateX(-5px)
+  border: solid 1px var(--color-outline)
+
+.themeCircleSecondaryColor
+  height: 1rem
+  background-color: var(--color-primary)
+  clip-path: polygon(0 0, 100% 0, 100% 100%)

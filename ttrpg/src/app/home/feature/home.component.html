@@ -1,21 +1,17 @@
-<h1>{{ 'HOME.welcome' | translate }}</h1>
-<h2>{{ 'HOME.chooseCharacter' | translate }}</h2>
+<h1>{{ "HOME.welcome" | translate }}</h1>
+<h2>{{ "HOME.chooseCharacter" | translate }}</h2>
+<div class="actionButtonList">
+  <ttrpg-icon-button iconName="Add" (ttrpgClick)="addNewCharacter()" />
+  <ttrpg-icon-button iconName="Import" />
+</div>
 
 <!-- TODO Searchbar -->
 <ul class="character-list">
-  @for (character of characters | async ; track character.id) {
+  @for (character of characters(); track character.id) {
   <li>
-    <app-character-card class="character-card" [character]="character"
-      (fileNameChangeEvent)="handleFileNameChange(character, $event)"
-      (deleteCharacterEvent)="handleDeleteCharacter(character)" />
+    <ttrpg-character-card [character]="character" />
   </li>
-  }
-
-  @if (!(characters | async)) {
-  <h1 class="mt-5">{{ 'HOME.noCharacterFound' | translate }}</h1>
-  } @else {
-  <li>
-    <app-new-character-card class="character-card" (newCharacterEvent)="addNewCharacter()" />
-  </li>
+  } @empty {
+  <h1>{{ "HOME.noCharacterFound" | translate }}</h1>
   }
 </ul>

@@ -1,0 +1,21 @@
+<div class="menuContainer">
+  <ttrpg-icon-button iconName="Settings" (ttrpgClick)="onMenuButtonClick()" />
+
+  @if (isOpen) {
+  <ttrpg-settings-item
+    iconName="Add"
+    [text]="'SETTINGS.home' | translate"
+    (ttrpgClick)="navigateToHome()"
+  />
+  <ttrpg-settings-theme />
+  <ttrpg-settings-language (ttrpgLanguageChange)="setTranslateLang($event)" />
+  <ttrpg-settings-item
+    iconName="Add"
+    [text]="'SETTINGS.imprint' | translate"
+    (ttrpgClick)="navigateToImprint()"
+  />
+  }
+</div>
+@if (isOpen) {
+<button type="button" class="outsideMenu" (click)="isOpen = false"></button>
+}

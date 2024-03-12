@@ -1,11 +1,6 @@
 import Dexie, { Table } from 'dexie';
 import { environment } from 'src/environments/environment';
-
-export interface Character {
-  id?: number
-  fileName: string
-  lastOpened?: Date
-}
+import { Character } from './character';
 
 export class AppDB extends Dexie {
   characters!: Table<Character, number>

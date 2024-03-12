@@ -1,0 +1,16 @@
+<section>
+  <h3>{{ "SETTINGS.UI.LANGUAGE.language" | translate }}</h3>
+  @for (language of languages; track $index) {
+  <label>
+    <input
+      type="radio"
+      name="language"
+      [checked]="language === selectedLanguage"
+      (click)="onLanguageSelection(language)"
+    />
+    <span>{{ "SETTINGS.UI.LANGUAGE." + language | translate }}</span>
+    <span class="languageIndex">({{ language }})</span>
+    <div class="overlay"></div>
+  </label>
+  }
+</section>
